@@ -11,27 +11,26 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
 ### Software Used
 
-R 4.3.1 [@R] was used for all computations. The following packages were used:
+R 4.3.1 was used for all computations. The following packages were used:
 
-| Package | Use | Reference |
-|---------|-----|-----------|
-| dplyr | general data processing | @dplyr |
-| tidyverse | general data processing | @tidyverse |
-ANCOMBC
-vegan
-DT
-phyloseq
-devtools
-MicEco
-ggplot2
-gridExtra
-multcomp
-DADA2
-ggpubr
-rstatix
-fantaxtic
-DESeq2
-
+| Package | Use |
+|---------|-----|
+| dplyr | general data processing |
+| tidyverse | general data processing | 
+| DT | general data processing |
+| devtools | general data processing | 
+| ggplot2 | general data visualization | 
+| gridExtra | general data visualization | 
+| ggpubr | general data visualization |
+| rstatix | general data processing and visualization | 
+| vegan | microbial community analysis |
+| phyloseq | microbial community analysis | 
+| DESeq2 | normalization |
+| MicEco | Euler graphs | 
+| multcomp | multiple comparisons, analysis of variance | 
+| ANCOMBC | differential abundance analysis | 
+| DADA2 | resolving ASVs and assigning taxonomy | 
+| fantaxtic | microbial abundance graphs |
 
 ## Background
   
@@ -760,11 +759,7 @@ ggsave("top_10_orders_bin.png", plot = p3, path = "C:/Users/rlanc/OneDrive/Docum
 ```
 
 ```{r ANCOMBC analysis}
-# Code courtesy of Dr. Max Wren, modified for this data
-
-## ANalysis of Compositions of Microbiomes with Bias Correction (ANCOM-BC) is an extremely useful form of differential abundance analysis created specifically for short read sequencing. It accounts for sampling bias by estimating the "sampling fraction" which is the ratio of true abundance versus sample abundance based on a linear regression of the observed counts from all samples. 
-
-# working with a non-normalized phyloseq: this one has not been through variance stablization with DESeq2 since error correction is built into ANCOM-BC?
+# Code courtesy of Dr. Maxine Wren, modified for this data
 
 # remove collinear variables from the metadata
 filtered_meta = meta %>% dplyr::select(-c("System.Type", "Media.Type.1"))
@@ -781,7 +776,7 @@ filtered_ps = prune_taxa(taxa_sums(filtered_ps) > 10, filtered_ps)
 otu_df = otu_table(filtered_ps) %>% as.data.frame() %>% mutate(sums = rowSums(.)) %>% dplyr::select(sums, everything())
 
 # Continuous covariate: "Collection.Date"
-# Categorical covariates: “System.Name, System.Type, Media.Type.1, Bin”
+# Categorical covariates: “System.Name, Bin”
 # The group variable of interest: “Bin”
 # Three groups: "P removal", "N and P removal", 
 # The reference group: “Full scale WRRF”
@@ -834,9 +829,6 @@ diff_taxons
 [14] "Bacteria_Firmicutes_Clostridia_Oscillospirales"             
 [15] "Bacteria_Proteobacteria_Alphaproteobacteria_NA"             
 [16] "Bacteria_Firmicutes_Bacilli_Erysipelotrichales" 
-
-
-## Extra code ## 
 
 ```{r Select Parcubacteria and outgroups for use in phylogenetic tree: input format for multiple sequence alignment using MEGA}
 # parcu = tax %>% as.data.frame() %>% rownames_to_column("otu") %>% filter(Class %in% c("Parcubacteria"))
