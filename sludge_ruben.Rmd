@@ -360,13 +360,13 @@ set.seed(100)
 euler2 = ps_euler(phyobj_all, "System.Type", quantities = list(type=c("percent")), fraction = 0, shape = "ellipse", weight = TRUE, relative = TRUE, fill = c("#347F92", "#A6CEE3","#94DE11" ))
 p2 = grid.arrange(grobs = list(euler2), top = "System Type, Full Sample")
 
-euler3 = ps_euler(phyobj_all, "Operation", quantities = list(type=c("percent")), fraction = 0, shape = "ellipse", weight = TRUE, relative = TRUE, fill = c("#648FFF", "#785EF0","#DC267F" ))
-p3 = grid.arrange(grobs = list(euler3), top = "Operation, Full Sample")
+set.seed(123)
+euler3 = ps_euler(phyobj_all, "Bin", quantities = list(type=c("percent")), fraction = 0, shape = "ellipse", weight = TRUE, relative = TRUE, fill = c("#347F92", "#A6CEE3","#94DE11" ))
+p3 = grid.arrange(grobs = list(euler3), top = "Bin, Full Sample")
 
 ggsave(filename = "euler_media.png", plot = p1, path = "C:/Users/rlanc/OneDrive/Documents/Bioinformatics/Parcubacteria_project/images")
 ggsave(filename = "euler_system.png", plot = p2, path = "C:/Users/rlanc/OneDrive/Documents/Bioinformatics/Parcubacteria_project/images")
-ggsave(filename = "euler_operation.png", plot = p3, path = "C:/Users/rlanc/OneDrive/Documents/Bioinformatics/Parcubacteria_project/images")
-
+ggsave(filename = "euler_bin.png", plot = p3, path = "C:/Users/rlanc/OneDrive/Documents/Bioinformatics/Parcubacteria_project/images")
 ```
 
 
@@ -558,11 +558,11 @@ phyobj_func = phyloseq(func_ASV, SAMPLE)
 
 ps = phyobj_func
 
-p = subset_samples(ps, Bin == "P removal")
+p = subset_samples(ps, Bin == "P")
 p10 = names(sort(taxa_sums(p), TRUE)[1:10])
-pn = subset_samples(ps, Bin == "N and P removal")
+pn = subset_samples(ps, Bin == "PN")
 pn10 = names(sort(taxa_sums(pn), TRUE)[1:10])
-pha = subset_samples(ps, Bin == "PHA bioplastics reactor")
+pha = subset_samples(ps, Bin == "PHA")
 pha10 = r10 = names(sort(taxa_sums(pha), TRUE)[1:10])
 top10 = unique(c(pha10, p10, pn10))
 
@@ -881,7 +881,8 @@ p1 = plot_ordination(
  scale_fill_manual(values=c("#A6CEE3","#347F92","#94DE11")) +
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
     panel.background = element_blank(), axis.line = element_line(colour = "black"),strip.text = element_text(colour = 'white'),text = element_text(size=12),legend.text=element_text(size=12),legend.title = element_blank())+
-  annotate("text", x = 2, y = -2, label = stresslab)
+  annotate("text", x = 2, y = -2, label = stresslab) + 
+  annotate("text", x = 2, y = -2.5, label = "Non-metric fit, R² = 0.985")
 
 p1
 ggsave("nmds_Bin.png", plot = p1, path="C:/Users/rlanc/OneDrive/Documents/Bioinformatics/Parcubacteria_project/images")
@@ -929,20 +930,37 @@ anova(bd)
 
 ```
 
+```{r NMDS by bin, for poster}
+# displays poorly in R but saves image with correct dimensions # 
 
-## Generate Euler's diagrams 
+physeq_ord <- ordinate(
+ physeq = phyobj_all,
+ method = "NMDS",
+ formula = ~Bin,
+ distance = "bray"
+)
 
-```{r MicEco Euler diagrams}
-#Fraction = Fraction of samples in a group in which the taxa should be present to be included in the count
+stress = as.character(round(physeq_ord$stress, digits = 3))
+stresslab = paste("Stress =", stress)
 
-euler1 = ps_euler(phyobj, "System.Type", shape = "ellipse", weight = TRUE)
-grid.arrange(grobs = list(euler1), top = "System Type, Fraction 0.1")
+p1 = plot_ordination(
+ physeq = phyobj_all,
+ ordination = physeq_ord,
+ color = "Bin"
+) +
+ aes(group = Bin) +
+ geom_point(aes(color = Bin), alpha = 0.95, size = 5) +
+  scale_color_manual(values=c("#F3722C","#871762","#90B30E"))+
+  scale_fill_manual(values=c("#F3722C","#871762","#90B30E")) +
+  stat_ellipse(type = "t", geom = "polygon", position = "identity", alpha = .05, aes(fill = Bin)) + 
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+    panel.background = element_blank(), axis.line = element_line(colour = "black"),strip.text = element_text(colour = 'white'),text = element_text(size=60, family = "skeena"),legend.text=element_text(size=60),legend.title = element_blank())+
+  annotate("text", x = 4.2, y = -2, label = stresslab, size = 12, family = "skeena")+
+  annotate("text", x = 3.6, y = -2.5, label = "Non-metric fit, R² = 0.985", size = 12, family = "skeena")+
+  theme(plot.background = element_rect(fill = "#F0EEE4"), legend.background = element_rect(fill = "#F0EEE4"))
+  
 
-euler2 = ps_euler(phyobj, "System.Type", fraction = 0.2, shape = "ellipse", weight = TRUE)
-grid.arrange(grobs = list(euler2), top = "System Type, Fraction 0.2")
+p1
+ggsave("nmds_Bin.png", plot = p1, path="C:/Users/rlanc/OneDrive/Documents/Bioinformatics/Parcubacteria_project/images", height = 5, width = 7, dpi = 300)
+```
 
-euler4 = ps_euler(phyobj, "Media.Type.1", fraction = 0.1, shape = "ellipse", weight = TRUE)
-grid.arrange(grobs = list(euler4), top = "Media Type, Fraction 0.1")
-
-euler5 = ps_euler(phyobj, "Media.Type.1", fraction = 0.2, shape = "ellipse", weight = TRUE)
-grid.arrange(grobs = list(euler5), top = "Media Type, Fraction 0.2")
