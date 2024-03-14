@@ -929,3 +929,20 @@ anova(bd)
 
 ```
 
+
+## Generate Euler's diagrams 
+
+```{r MicEco Euler diagrams}
+#Fraction = Fraction of samples in a group in which the taxa should be present to be included in the count
+
+euler1 = ps_euler(phyobj, "System.Type", shape = "ellipse", weight = TRUE)
+grid.arrange(grobs = list(euler1), top = "System Type, Fraction 0.1")
+
+euler2 = ps_euler(phyobj, "System.Type", fraction = 0.2, shape = "ellipse", weight = TRUE)
+grid.arrange(grobs = list(euler2), top = "System Type, Fraction 0.2")
+
+euler4 = ps_euler(phyobj, "Media.Type.1", fraction = 0.1, shape = "ellipse", weight = TRUE)
+grid.arrange(grobs = list(euler4), top = "Media Type, Fraction 0.1")
+
+euler5 = ps_euler(phyobj, "Media.Type.1", fraction = 0.2, shape = "ellipse", weight = TRUE)
+grid.arrange(grobs = list(euler5), top = "Media Type, Fraction 0.2")
