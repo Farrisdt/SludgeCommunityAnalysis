@@ -7,6 +7,7 @@ output: html_document
 
 ```{r include = FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+select = dplyr::select
 ```
 
 ### Software Used
@@ -921,6 +922,8 @@ adonis_dist = vegdist(ot_df, method = "bray")
 stressplot(physeq_ord)
 
 submeta = meta %>% t() %>% as.data.frame %>% dplyr::select(any_of(samples)) %>% t() %>% as.data.frame()
+
+# PERMANOVA # 
 bintype = adonis2(adonis_dist ~ Bin, data = submeta, permutations = 1e4)
 bintype$`Pr(>F)`[1] #p-value 
 
@@ -963,4 +966,23 @@ p1 = plot_ordination(
 p1
 ggsave("nmds_Bin.png", plot = p1, path="C:/Users/rlanc/OneDrive/Documents/Bioinformatics/Parcubacteria_project/images", height = 5, width = 7, dpi = 300)
 ```
+
+Efforts were made at the beginning of the project to investigate Parcubacteria specifically. Beta diversity analysis using NMDS proved difficult due to the sparsity of Parcubacteria differences between samples. Presence-absence and abundance testing was possible, however, and revealed that PN systems and systems with real wastewater had a greater amount and variety of Parcubacteria.
+
+```{r Parcubacteria abundance}
+# https://joey711.github.io/phyloseq/plot_bar-examples.html #
+
+# normalize using DESeq2 first # 
+phyobj_parcu = subset_taxa(phyobj_all, Class == "Parcubacteria")
+
+p = plot_bar(phyobj_parcu, "Order", fill="Order", facet_grid=~Bin)
+p + geom_bar(aes(color=Order, fill=Order), stat="identity", position="stack") + ggtitle("Parcubacteria Abundances") + ylab ("Abundance (arbitraty units)")
+
+
+p = plot_bar(phyobj_parcu, "Order", fill="Order", facet_grid=~Media.Type.1)
+p + geom_bar(aes(color=Order, fill=Order), stat="identity", position="stack") + ggtitle("Parcubacteria Abundances") + ylab ("Abundance (arbitraty units)")
+
+```
+
+
 
