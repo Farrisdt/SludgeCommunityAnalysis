@@ -287,6 +287,8 @@ sum(is.na(tax_df$Class))/length(tax_df$Class)
 sum(is.na(tax_df$Order))/length(tax_df$Order)
 sum(is.na(tax_df$Family))/length(tax_df$Family)
 sum(is.na(tax_df$Genus))/length(tax_df$Genus)
+
+# it looks like Family is the highest resolution possible # 
 ```
 
 ```{r Plot diversity measures by media type, bin type, and system type with Shannon and Simpson}
@@ -305,7 +307,7 @@ ggsave(filename = "shannon_simpson_bin.png", plot = p1, path = "./files/images",
 ```
 
 
-```{r Shannon's by Bin type, fig.show = "hide"}
+```{r Shannon's by Bin type}
 #ANOVA
 richness = phyobj_all %>% estimate_richness(measures = c("Shannon", "Simpson")) %>% rownames_to_column(var="Sample.ID")
   #subset meta 
@@ -350,7 +352,7 @@ p1 = plot_richness(phyobj_all, measures = c("Shannon"), x= "Bin")+
 
 p1
 #Save plot
-ggsave(filename = "shannons_bin.png", plot = p1, path = working_directory)
+ggsave(filename = "shannons_bin_anova.png", plot = p1, path = "./files/images", width = 7, height = 7, units = "in")
 ```
 
 ## Community structure with Euler diagrams 
