@@ -356,6 +356,7 @@ ggsave(filename = "shannons_bin_anova.png", plot = p1, path = "./files/images", 
 ```
 
 ## Community structure with Euler diagrams 
+
 ```{r MicEco Euler diagrams, Full Sample}
 library(MicEco)
 library(gridExtra)
@@ -368,13 +369,13 @@ set.seed(100)
 euler2 = ps_euler(phyobj_all, "System_Type", quantities = list(type=c("percent")), fraction = 0, shape = "ellipse", weight = TRUE, relative = TRUE, fill = c("#347F92", "#A6CEE3","#94DE11" ))
 p2 = grid.arrange(grobs = list(euler2), top = "System Type, Full Sample")
 
-set.seed(123)
+set.seed(125)
 euler3 = ps_euler(phyobj_all, "Bin", quantities = list(type=c("percent")), fraction = 0, shape = "ellipse", weight = TRUE, relative = TRUE, fill = c("#347F92", "#A6CEE3","#94DE11" ))
 p3 = grid.arrange(grobs = list(euler3), top = "Bin, Full Sample")
 
-ggsave(filename = "euler_media.png", plot = p1, path = working_directory)
-ggsave(filename = "euler_system.png", plot = p2, path = working_directory)
-ggsave(filename = "euler_bin.png", plot = p3, path = working_directory)
+ggsave(filename = "euler_media.png", plot = p1, path = "./files/images", width = 7, height = 4, units = "in")
+ggsave(filename = "euler_system.png", plot = p2, path = "./files/images", width = 7, height = 4, units = "in")
+ggsave(filename = "euler_bin.png", plot = p3, path = "./files/images", width = 7, height = 4, units = "in")
 ```
 
 ## Beta Diversity analysis
