@@ -24,6 +24,9 @@ fapro_raw = read_tsv("C:/Users/farri/Coding/Sludge/silva_allgroups_taxtable_1-25
 #tax <- read_csv("C:/Users/farri/Coding/Sludge/taxa_silva_dada2_20240110.csv")
 report <- read_tsv("C:/Users/farri/Coding/Sludge/Funtional_Taxonomy_Report.txt")
 
+#fix under counting NA in data file
+total_na = report %>% filter(is.na(report$order))
+report= mutate(report, order_total=replace(order_total, is.na(order), sum(total_na$count)))
 metapath = "C:/Users/farri/Coding/Sludge/Sludge_Metadata_1_10_24.xlsx"
 
 ```
@@ -94,25 +97,25 @@ fullset %>%
   ggplot(aes(x=reorder(Sample_ID, -group_total), y=group_total, fill=System_Focus)) +
          geom_bar(stat="identity") + labs(y="Amount of reads tagged with functionality", x="Sample") + theme_light() + scale_fill_manual(values=c("#52ADC2", "#F58609","purple")) +theme( axis.text.y=element_text(size=25), axis.title=element_text(size=35), title=element_text(size=40), legend.text=element_text(size=25))+
   coord_flip()
-#ggsave("Functionality_Totals.png", height=11, width=18, dpi=300)
+ggsave("Functionality_Totals.png", height=11, width=18, dpi=300)
 
 wwt %>%
   ggplot(aes(x=reorder(Sample_ID, -group_total), y=group_total, fill=System_Focus)) +
          geom_bar(stat="identity")+ labs(y="Amount of reads tagged with WWT relevant functionality", x="Sample") + theme_light() + scale_fill_manual(values=c("#52ADC2", "#F58609","purple")) +theme( axis.text.y=element_text(size=25), axis.title=element_text(size=35), title=element_text(size=40), legend.text=element_text(size=25))+
   coord_flip()
-#ggsave("Functionality_Totals_WWTTarget.png", height=11, width=18, dpi=300)
+ggsave("Functionality_Totals_WWTTarget.png", height=11, width=18, dpi=300)
 
 fullset %>%
   ggplot(aes(x=reorder(System_Focus, -group_total), y=group_total, fill=System_Focus)) +
          geom_bar(stat="identity")+ labs(y="Amount of reads tagged with functionality", x="Sample")+theme_light() + scale_fill_manual(values=c("#52ADC2", "#F58609","purple")) +theme( axis.text.y=element_text(size=25), axis.title=element_text(size=35), title=element_text(size=40), legend.text=element_text(size=25))+
   coord_flip()
-#ggsave("Functionality_by_system_focus.png", height=11, width=18, dpi=300)
+ggsave("Functionality_by_system_focus.png", height=11, width=18, dpi=300)
 
 wwt %>%
   ggplot(aes(x=reorder(System_Focus, -group_total), y=group_total, fill=System_Focus)) +
          geom_bar(stat="identity")+ labs(y="Amount of reads tagged with wwt functionality", x="Sample") + theme_light() + scale_fill_manual(values=c("#52ADC2", "#F58609","purple")) + theme( axis.text.y=element_text(size=25), axis.title=element_text(size=35), title=element_text(size=40), legend.text=element_text(size=25))+
   coord_flip()
-#ggsave("WWT_relivent_functionality_by_system_focus.png", height=11, width=18, dpi=300)
+ggsave("WWT_relivent_functionality_by_system_focus.png", height=11, width=18, dpi=300)
 
 ```
 
@@ -123,31 +126,33 @@ report %>% filter(order %in% c("Bacteroidales", "Burkholderiales", "Chitinophaga
   ggplot(aes(x=order, y=order_relative, fill=functionality)) +
          geom_bar(stat="identity")+ labs(y="Relative abundance of functionality", x="Order")+theme_light() +theme( axis.text.y=element_text(size=15), axis.title=element_text(size=20), title=element_text(size=40), legend.text=element_text(size=15))+
   coord_flip()
-#ggsave("Functionality_relative_abundance_all.png", height=11, width=18, dpi=300)
+ggsave("Functionality_relative_abundance_all_nofilter.png", height=11, width=18, dpi=300)
 
-```
-
-```{r other sorting for relative function below}
-report_filtered = report %>% filter(!duplicated(across(-functionality)))
-
-report_filtered = report_filtered %>% filter(!(functionality %in% c("nitrate_denitrification", "nitrite_denitrification", "nitrous_oxide_denitrification", "photosynthetic_cyanobacteria", "nitrogen_respiration", "human_gut", "mammal_gut", "human_pathogens_all", "aerobic_nitrite_oxidation")))
 ```
 
 ```{r relative functionality in top orders with data correction}
 report_filtered = report[-c(2)] 
+# The following functions were removed due to overlapping data:
+
+  # [methanol_oxidation] "methanotrophy", "methylotrophy"               # [sulfur_respiration] "respiration_of_sulfur_compounds", "dark_oxidation_of_sulfur_compounds"      
+  # [denitrificatoin] "nitrate_denitrification", "nitrite_denitrification", "nitrous_oxide_denitrification", "nitrate_reduction"                    
+  # [human_associated] "human_pathogens_all", "human_gut", "mammal_gut", "aromatic_hydrocarbon_degradation"      
+  # [nitrate_respiration and nitrogen_fixation] , "nitrogen_respiration",  "nitrite_respiration", "nitrification"
+  # [photoautotrophy and photoheterotrophy] "anoxygenic_photoautotrophy_S_oxidizing", "oxygenic_photoautotrophy", "phototrophy", "photosynthetic_cyanobacteria"                        
+# For a list of all functions removed run: setdiff(unique(report$functionality), unique(report_filtered$functionality))
+
+# This removes the overlap of aerobic and regular chemeohetertroph so we can have both without overrepresentation
 report_filtered = report_filtered %>% filter(functionality %in% c("chemoheterotrophy", "aerobic_chemoheterotrophy")) %>%
    filter(!duplicated(across(-functionality)))
 
 report_filtered = rbind(report_filtered, report[-c(2)] %>% filter(functionality %in% c("denitrification", "	
-sulfur_respiration", "thiosulfate_respiration", "iron_respiration", "nitrate_respiration", "dark_sulfide_oxidation", "aerobic_nitrite_oxidation", "aliphatic_non_methane_hydrocarbon_degradation", "animal_parasites_or_symbionts", "anoxygenic_photoautotrophy", "aromatic_compound_degradation", "cellulolysis", "chitinolysis", "chlorate_reducers", "chloroplasts", "dark_hydrogen_oxidation", "fermentation", "fumarate_respiration", "human_associated", "hydrocarbon_degradation", "intracellular_parasites", "manganese_oxidation", "nitrogen_fixation", "nonphotosynthetic_cyanobacteria", "photoautotrophy", "photoheterotrophy", "predatory_or_exoparasitic", "reductive_acetogenesis", "ureolysis")))
+sulfur_respiration", "thiosulfate_respiration", "iron_respiration", "nitrate_respiration", "dark_sulfide_oxidation", "aerobic_nitrite_oxidation", "aliphatic_non_methane_hydrocarbon_degradation", "animal_parasites_or_symbionts", "anoxygenic_photoautotrophy", "aromatic_compound_degradation", "methanol_oxidation", "cellulolysis", "chitinolysis", "chlorate_reducers", "chloroplasts", "dark_hydrogen_oxidation", "fermentation", "fumarate_respiration", "human_associated", "hydrocarbon_degradation", "intracellular_parasites", "manganese_oxidation", "nitrogen_fixation", "nonphotosynthetic_cyanobacteria", "photoautotrophy", "photoheterotrophy", "predatory_or_exoparasitic", "reductive_acetogenesis", "ureolysis")))
 
 filtered_order_total = aggregate(count~order,report_filtered,sum)
 names(filtered_order_total)[2] = 'filtered_order_total'
 report_filtered = left_join(report_filtered, filtered_order_total, join_by(order))
 
 report_filtered$order_relative_filtered = report_filtered$count/report_filtered$filtered_order_total
-
-mylevels = c("aerobic chemoheterotrophy", "chemoheterotrophy", "fermentation", "nitrate denitrification", "nitrate reduction", "nitrate respiration", "nitrite denitrification", "nitrite respiration", "nitrogen respiration", "denitrification", "nitrous oxide denitrification", "chlorate reducers", "dark oxidation of sulfur compounds", "dark sulfide oxidation", "photoheterotrophy", "phototrophy", "predatory or exoparasitic")
 
 function_bar_order = c("aerobic chemoheterotrophy", "chemoheterotrophy", "fermentation", "denitrification",  "nitrate respiration", "nitrogen fixation", "cellulolysis", "ureolysis", "photoautotrophy", "photoheterotrophy", "animal parasites or symbionts", "chlorate reducers", "manganese oxidation", "hydrocarbon degradation", "aerobic nitrite oxidation", "dark sulfide oxidation", "dark hydrogen oxidation", "anoxygenic photoautotrophy", "iron respiration", "fumarate respiration", "human associated")
 
@@ -173,14 +178,12 @@ report_top_10 %>%
         axis.ticks.x=element_blank())+coord_flip()+guides(fill=guide_legend(ncol =1))+
   scale_fill_manual(values = c('#90B30E', '#799900', '#AABA6E', '#D4D700', '#80B918', '#583101', '#7D3600', '#7D451B', '#826046', "#F3722C", '#F8961E','#ffbb33', '#D00000','#9A040F', '#C981B1', '#A35B8B','#7D3565', '#570F3F', '#4A4A4A','#666666', '#8F8F8F', '#B8B8B8','#D9D9D9'))
 
-  scale_fill_manual(values=c('#AACC00', '#D4D700', '#7D451B', '#007F00', '#80B918', '#55A630', '#583101', '#A08042', '#AFFC41', '#A4B75C','#ccaa22','#F8961E', '#F3722C', '#ffbb33', '#D00000', '#9A040F','#647332','#9D4EDD', '#E0AAFF', '#AB51E3', '#3C096C'))
-
 showtext::showtext_auto()
 showtext::showtext_opts(dpi = 300)
-#ggsave("Functionalities_Top_10_Orders.png", height=11, width=18, dpi=300)
+ggsave("Functionalities_Top_10_Orders.png", height=11, width=18, dpi=300)
 ```
 
-```{r data processing: System_Focus}
+```{r data processing: System_Focus by order}
 fullset_filtered = fullset[!(row.names(fullset) %in% c("EUBF1","EUBB6","EUBB7", "EUBC7","EUBD1","EUBF5"  ,"EUBC9","EUBB12","EUBG9")),] 
 fullset_filtered2 = data.frame(t(fullset_filtered))
 colnames(fullset_filtered2) = fullset$Sample_ID
@@ -192,7 +195,7 @@ fullset_filtered2 = data.frame(t(fullset_filtered))
 fullset_filtered = as.data.frame(sapply(fullset_filtered2, as.numeric))
 fullset_filtered$System_Focus = fullset_filtered2$System_Focus
 
-
+# Removing overlapping data. When non-overlapping regions can be conserved they are subtracted from parent function. Functions removed by name has no non-overlapping regions.
 fullset_filtered$chemoheterotrophy = (fullset_filtered$chemoheterotrophy - fullset_filtered$aerobic_chemoheterotrophy)
 fullset_filtered$phototrophy = (fullset_filtered$phototrophy - fullset_filtered$photoheterotrophy)
 fullset_filtered$nitrate_reduction = (fullset_filtered$nitrate_reduction - fullset_filtered$nitrate_respiration)
@@ -268,19 +271,19 @@ fapro5000 %>%
   ggplot(aes(x=reorder(group, -group_total), y=group_total)) +
          geom_bar(stat="identity", fill="#347F92")+ ggtitle("Functionality Seen in >5000 Samples") + labs(y="Amount of Samples Tagged for Specified Functionality", x="Functionality Tag")+theme_light() +theme(axis.text.y=element_text(size=15), axis.title=element_text(size=35), title=element_text(size=40))+
   coord_flip()
-#ggsave("Functionalities_5000.png", height=10, width=20)
+ggsave("Functionalities_5000.png", height=10, width=20)
 
 fapro5000 %>%
   ggplot(aes(x=reorder(group, -group_total), y=group_total, fill=group)) +
          geom_bar(stat="identity")+ ggtitle("Functionality for by WWT Relevance") + labs(y="Amount of Samples Tagged for Specified Functionality", x="Functionality Tag")+theme_light()+theme(axis.text.y=element_text(size=15), axis.title=element_text(size=35), title=element_text(size=40), legend.text=element_text(size=20))+
   coord_flip()#+scale_fill_manual(values=c("#347F92","#52ADC2", "#F58609")) 
-#ggsave("WWT_Functionalities_highlight.png", height=10, width=20)
+ggsave("WWT_Functionalities_highlight.png", height=10, width=20)
 
 wwt_fapro %>%
   ggplot(aes(x=reorder(group, -group_total), y=group_total)) +
          geom_bar(stat="identity", fill="#F58609")+ ggtitle("10 Most Common WWT Functional Terms") + labs(y="Amount of Samples Tagged for Specified Functionality", x="Functionality Tag")+theme_light()+theme(axis.text.y=element_text(size=30), axis.title=element_text(size=35), title=element_text(size=40))+
   coord_flip()
-#ggsave("10_top_WWT_Functionalities.png", height=10, width=20)
+ggsave("10_top_WWT_Functionalities.png", height=10, width=20)
 ```
 
 ```{r compairing system type, system focus, and media type}
