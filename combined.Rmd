@@ -169,11 +169,6 @@ taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
 
 ```
 
-```{r Plot diversity measures by media type with Shannon and Simpson}
-plot_richness(ps,x = "Media_Type_1", measures=c("Shannon", "Simpson"), color="Media_Type_1")
-
-```
-
 ```{r Overall alpha diversity evaluation by sample}
 # prepare data into long format 
 asv_df = as.data.frame(asv)
@@ -202,7 +197,7 @@ p1 = summary_shared %>%
 
 p1
 
-ggsave("summary_sample_diversity.png", plot=p1, path = "./files/images")
+ggsave("summary_sample_diversity.png", plot=p1, path = "./files/images", width = 7, height = 9, units = "in")
 ```
 
 ```{r Rarefaction: evaluate how sample size affects diversity metrics}
@@ -293,6 +288,22 @@ sum(is.na(tax_df$Order))/length(tax_df$Order)
 sum(is.na(tax_df$Family))/length(tax_df$Family)
 sum(is.na(tax_df$Genus))/length(tax_df$Genus)
 ```
+
+```{r Plot diversity measures by media type, bin type, and system type with Shannon and Simpson}
+
+p1 = plot_richness(ps,x = "Media_Type_1", measures=c("Shannon", "Simpson"), color="Media_Type_1")
+p1
+ggsave(filename = "shannon_simpson_mediatype.png", plot = p1, path = "./files/images", width = 7, height = 7, units = "in")
+
+p1 = plot_richness(ps,x = "System_Type", measures=c("Shannon", "Simpson"), color="System_Type")
+p1
+ggsave(filename = "shannon_simpson_systemtype.png", plot = p1, path = "./files/images", width = 7, height = 7, units = "in")
+
+p1 = plot_richness(ps,x = "Bin", measures=c("Shannon", "Simpson"), color="Bin")
+p1
+ggsave(filename = "shannon_simpson_bin.png", plot = p1, path = "./files/images", width = 7, height = 7, units = "in")
+```
+
 
 ```{r Shannon's by Bin type, fig.show = "hide"}
 #ANOVA
