@@ -137,7 +137,7 @@ asv <- t(seqtab.nochim)
 ```{r Setting up a dataframe for phyloseq}
 
 library(readxl)
-metadata <- as.data.frame(read_excel("/Users/leycufur/bioinfo/Bi624/Sludge/Illumina_Reads_updated_1-10-24.xlsx"))
+metadata <- as.data.frame(read_excel("./files/Illumina_Reads_updated_3_20_24.xlsx"))
 colnames(metadata) <- gsub(" ", "_", colnames(metadata)) #replacing spaces in column names with underscores
 
 # converting the Sample_ID column to the row names
