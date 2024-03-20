@@ -149,11 +149,15 @@ meta$Sample_ID <- rownames(meta)
 ```
 
 ```{r Construct phyloseq object}
+# filter out asvs with counts less than 1; these might be sequencing errors # 
+
 asv = as.data.frame(asv) %>% mutate(count = rowSums(.)) %>% dplyr::select(count, everything()) %>% filter(count > 1) %>% dplyr::select(-count)
 
 ps <- phyloseq(otu_table(asv, taxa_are_rows = TRUE), 
                sample_data(meta), 
                tax_table(taxa))
+
+# save a phyloseq object to reset at later points# 
 backup_phyobj_all = ps
 ```
 
@@ -165,7 +169,7 @@ taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
 
 ```
 
-```{r Plot richness by media type with Shannon and Simpson}
+```{r Plot diversity measures by media type with Shannon and Simpson}
 plot_richness(ps,x = "Media_Type_1", measures=c("Shannon", "Simpson"), color="Media_Type_1")
 
 ```
@@ -198,7 +202,7 @@ p1 = summary_shared %>%
 
 p1
 
-ggsave("summary_sample_diversity.png", plot=p1, path = working_directory)
+ggsave("summary_sample_diversity.png", plot=p1, path = "./files/images")
 ```
 
 ```{r Rarefaction: evaluate how sample size affects diversity metrics}
