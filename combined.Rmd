@@ -228,7 +228,7 @@ p1= summary_rand %>%
 
 p1
 #Save image
-ggsave("summary_rarified_diversity.png", plot=p1, path = working_directory)
+ggsave("summary_rarified_diversity.png", plot=p1, path = "./files/images", width = 7, height = 9, units = "in")
 ```
 
 ```{r data preprocessing}
