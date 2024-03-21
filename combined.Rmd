@@ -11,6 +11,42 @@ editor_options:
 Thank you to our collaborator Dr. Erik Coats and our BGMP mentor Dr. Maxine Wren for technical support on this project. 
 Data collection and analyses performed by the IIDS Genomics and Bioinformatics Resources Core at the University of Idaho were supported in part by NIH COBRE grant P30GM103324.
 
+### Software Used
+
+R 4.3.1 was used for all computations. The following packages were used:
+
+| Package | Use |
+|---------|-----|
+| dplyr | general data processing |
+| tibble | general data processing |
+| tidyverse | general data processing | 
+| DT | general data processing |
+| devtools | general data processing | 
+| ggplot2 | general data visualization |
+| ggh4x | general data visualization |
+| gridExtra | general data visualization | 
+| ggpubr | general data visualization |
+| viridis | colors for data visualization |
+| rstatix | general data processing and visualization | 
+| vegan | microbial community analysis |
+| phyloseq | microbial community analysis | 
+| microbiome | microbial community analysis |
+| DESeq2 | normalization |
+| MicEco | Euler graphs | 
+| multcomp | multiple comparisons, analysis of variance | 
+| ANCOMBC | differential abundance analysis | 
+| DADA2 | resolving ASVs and assigning taxonomy | 
+| fantaxtic | microbial abundance graphs |
+| Biostrings | string container for ASVs | 
+| DECIPHER | phylogenetic trees | 
+| phangorn | phylogenetic trees |
+
+
+## Data description
+
+Media Type: 
+Bin: Function of the system. Primarily phosphorus removal (P), primarily phosphorus + nitrogen removal (PN), primarily PHA production (PHA).
+
 ## Setup 
 
 ```{r setup, include=FALSE}
@@ -208,6 +244,8 @@ p1
 ggsave("summary_sample_diversity.png", plot=p1, path = "./files/images", width = 7, height = 9, units = "in")
 ```
 
+To evaluate how sampling effort affects alpha diversity, we can use random subsampling. We have a few samples (under about 10,000) that show low sampling effort may affect their results. For the most part, points follow the flat line and show that we have sufficient sampling. We should consider a cutoff of 10,000.
+
 ```{r Rarefaction: evaluate how sample size affects diversity metrics}
 #code from following the tutorial available at https://riffomonas.org/code_club/2022-03-17-alpha-diversity and  https://www.youtube.com/watch?v=wq1SXGQYgCs&ab_channel=RiffomonasProject
 #generate random dataframe: random subsampling 
@@ -244,8 +282,7 @@ ggsave("summary_rarified_diversity.png", plot=p1, path = "./files/images", width
 phyobj_all = ps
 phyobj_all
 
-#Subset out other Kingdoms (one Eukaryote), mitochondria, and chloroplasts which are picked up by the eubacteria primer
-
+#Subset out other Kingdoms (one Eukaryote), mitochondria, and chloroplasts which are picked up by the Eubacteria primer
 
 #prune to 10,000. See alpha diversity section.
 samples = sample_sums(phyobj_all) > 10000
@@ -254,7 +291,6 @@ phyobj_all = prune_samples(samples, phyobj_all)
 phyobj_all = subset_taxa(phyobj_all, Kingdom == "Bacteria")
 phyobj_all = subset_taxa(phyobj_all, Family != "Mitochondria")
 phyobj_all = subset_taxa(phyobj_all, Order != "Chloroplast")
-
 
 # List the samples that have been removed in preprocessing
 new_table = otu_table(phyobj_all) %>% as.data.frame()
@@ -268,7 +304,7 @@ phyobj_all
 
 ```
 
-## Data preprocessing 
+## Data preprocessing summary
 
 We performed the following data preprocessing steps:
 1a. Remove any reads not in the kingdom Bacteria
@@ -296,7 +332,7 @@ sum(is.na(tax_df$Order))/length(tax_df$Order)
 sum(is.na(tax_df$Family))/length(tax_df$Family)
 sum(is.na(tax_df$Genus))/length(tax_df$Genus)
 
-# it looks like Family is the highest resolution possible # 
+# it looks like Family is the highest resolution possible, but we decided to go with Order for later analyses. # 
 ```
 
 ```{r Plot diversity measures by media type, bin type, and system type with Shannon and Simpson}
@@ -314,6 +350,7 @@ p1
 ggsave(filename = "shannon_simpson_bin.png", plot = p1, path = "./files/images", width = 7, height = 7, units = "in")
 ```
 
+Here we use Shannon’s index, which considers both richness and evenness and tends to outperform Simpson’s index when many rarely occurring species are present, which is suitable for our dataset.
 
 ```{r Shannon's by Bin type}
 #ANOVA
