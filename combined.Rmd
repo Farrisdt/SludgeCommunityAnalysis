@@ -86,7 +86,7 @@ library(fantaxtic)
 path_R1 <- "/Users/leycufur/bioinfo/Bi624/Sludge/DADA2/R1_raw_reads" # CHANGE ME to the directory containing the fastq files after unzipping.
 path_R2 <- "/Users/leycufur/bioinfo/Bi624/Sludge/DADA2/R2_raw_reads" # CHANGE ME to the directory containing the fastq files after unzipping.
 
-working_directory <- "/Users/leycufur/bioinfo/Bi624/Sludge/DADA2/"
+working_directory <- "./files"
 
 mylevels = c("Enrichment BSC", "Full Enrichment BSC", "Production Run BSC", "AE4","AE8", "AE12", "AE20", "BP_PX2", "BP_PX2.1", "BP_PX3", "BP_PX3.1", "BP_PX5", "BP_PX6", "FEBPR", "GEBPR", "NF", "SEBPR", "Winkler I", "Winkler J","MWWTP", "scalemodel")
 
