@@ -98,25 +98,25 @@ fullset %>%
   ggplot(aes(x=reorder(Sample_ID, -group_total), y=group_total, fill=System_Focus)) +
          geom_bar(stat="identity") + labs(y="Amount of reads tagged with functionality", x="Sample") + theme_light() + scale_fill_manual(values=c("#52ADC2", "#F58609","purple")) +theme( axis.text.y=element_text(size=25), axis.title=element_text(size=35), title=element_text(size=40), legend.text=element_text(size=25))+
   coord_flip()
-#ggsave("Functionality_Totals.png", height=11, width=18, dpi=300)
+ggsave("files/images/functionality/Functionality_Totals.png", height=11, width=18, dpi=300)
 
 wwt %>%
   ggplot(aes(x=reorder(Sample_ID, -group_total), y=group_total, fill=System_Focus)) +
          geom_bar(stat="identity")+ labs(y="Amount of reads tagged with WWT relevant functionality", x="Sample") + theme_light() + scale_fill_manual(values=c("#52ADC2", "#F58609","purple")) +theme( axis.text.y=element_text(size=25), axis.title=element_text(size=35), title=element_text(size=40), legend.text=element_text(size=25))+
   coord_flip()
-#ggsave("Functionality_Totals_WWTTarget.png", height=11, width=18, dpi=300)
+ggsave("files/images/functionality/Functionality_Totals_WWTTarget.png", height=11, width=18, dpi=300)
 
 fullset %>%
   ggplot(aes(x=reorder(System_Focus, -group_total), y=group_total, fill=System_Focus)) +
          geom_bar(stat="identity")+ labs(y="Amount of reads tagged with functionality", x="Sample")+theme_light() + scale_fill_manual(values=c("#52ADC2", "#F58609","purple")) +theme( axis.text.y=element_text(size=25), axis.title=element_text(size=35), title=element_text(size=40), legend.text=element_text(size=25))+
   coord_flip()
-#ggsave("Functionality_by_system_focus.png", height=11, width=18, dpi=300)
+ggsave("files/images/functionality/Functionality_by_system_focus.png", height=11, width=18, dpi=300)
 
 wwt %>%
   ggplot(aes(x=reorder(System_Focus, -group_total), y=group_total, fill=System_Focus)) +
          geom_bar(stat="identity")+ labs(y="Amount of reads tagged with wwt functionality", x="Sample") + theme_light() + scale_fill_manual(values=c("#52ADC2", "#F58609","purple")) + theme( axis.text.y=element_text(size=25), axis.title=element_text(size=35), title=element_text(size=40), legend.text=element_text(size=25))+
   coord_flip()
-#ggsave("WWT_relivent_functionality_by_system_focus.png", height=11, width=18, dpi=300)
+ggsave("files/images/functionality/WWT_relivent_functionality_by_system_focus.png", height=11, width=18, dpi=300)
 
 ```
 
@@ -127,7 +127,7 @@ report %>% filter(order %in% c("Bacteroidales", "Burkholderiales", "Chitinophaga
   ggplot(aes(x=order, y=order_relative, fill=functionality)) +
          geom_bar(stat="identity")+ labs(y="Relative abundance of functionality", x="Order")+theme_light() +theme( axis.text.y=element_text(size=15), axis.title=element_text(size=20), title=element_text(size=40), legend.text=element_text(size=15))+
   coord_flip()
-#ggsave("Functionality_relative_abundance_all_nofilter.png", height=11, width=18, dpi=300)
+ggsave("files/images/functionality/Functionality_relative_abundance_all_nofilter.png", height=11, width=18, dpi=300)
 
 ```
 
@@ -181,7 +181,7 @@ report_top_10 %>%
 
 showtext::showtext_auto()
 showtext::showtext_opts(dpi = 300)
-#ggsave("Functionalities_Top_10_Orders.png", height=11, width=18, dpi=300)
+ggsave("files/images/poster_figures/Functionalities_Top_10_Orders.png", height=11, width=18, dpi=300)
 ```
 
 ```{r data processing: System_Focus by order}
@@ -263,8 +263,8 @@ System_Focuss %>% mutate(System_Focus = fct_relevel(System_Focus, "PHA", "P","PN
   
 showtext::showtext_auto()
 showtext::showtext_opts(dpi = 300)
-#
-#ggsave("Functionalities_by_System_Focus.png", height=10, width=18, dpi=300)
+
+ggsave("files/images/poster_figures/Functionalities_by_System_Focus.png", height=10, width=18, dpi=300)
 ```
 
 ```{r plot functionality overview}
@@ -272,19 +272,19 @@ fapro5000 %>%
   ggplot(aes(x=reorder(group, -group_total), y=group_total)) +
          geom_bar(stat="identity", fill="#347F92")+ ggtitle("Functionality Seen in >5000 Samples") + labs(y="Amount of Samples Tagged for Specified Functionality", x="Functionality Tag")+theme_light() +theme(axis.text.y=element_text(size=15), axis.title=element_text(size=35), title=element_text(size=40))+
   coord_flip()
-#ggsave("Functionalities_5000.png", height=10, width=20)
+ggsave("files/images/functionality/Functionalities_5000.png", height=10, width=20)
 
 fapro5000 %>%
   ggplot(aes(x=reorder(group, -group_total), y=group_total, fill=group)) +
          geom_bar(stat="identity")+ ggtitle("Functionality for by WWT Relevance") + labs(y="Amount of Samples Tagged for Specified Functionality", x="Functionality Tag")+theme_light()+theme(axis.text.y=element_text(size=15), axis.title=element_text(size=35), title=element_text(size=40), legend.text=element_text(size=20))+
   coord_flip()#+scale_fill_manual(values=c("#347F92","#52ADC2", "#F58609")) 
-#ggsave("WWT_Functionalities_highlight.png", height=10, width=20)
+ggsave("files/images/functionality/WWT_Functionalities_highlight.png", height=10, width=20)
 
 wwt_fapro %>%
   ggplot(aes(x=reorder(group, -group_total), y=group_total)) +
          geom_bar(stat="identity", fill="#F58609")+ ggtitle("10 Most Common WWT Functional Terms") + labs(y="Amount of Samples Tagged for Specified Functionality", x="Functionality Tag")+theme_light()+theme(axis.text.y=element_text(size=30), axis.title=element_text(size=35), title=element_text(size=40))+
   coord_flip()
-#ggsave("10_top_WWT_Functionalities.png", height=10, width=20)
+ggsave("files/images/functionality/10_top_WWT_Functionalities.png", height=10, width=20)
 ```
 
 ```{r compairing system type, system focus, and media type}
