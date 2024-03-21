@@ -44,8 +44,17 @@ R 4.3.1 was used for all computations. The following packages were used:
 
 ## Data description
 
-Media Type: 
-Bin: Function of the system. Primarily phosphorus removal (P), primarily phosphorus + nitrogen removal (PN), primarily PHA production (PHA).
+Activated sludge (AS) is a mixture of microbes that play an important part in waste water treatment (WWT). Living bacteria within AS remove polluting nutrients such as phosphorus and nitrogen before effluent is released back to the water cycle. This is an exploratory study focusing on taxonomic composition of these bacterial communities and their associated functional potential, suggesting the roles they may play in AS. In this project, we worked with data provided by Dr. Erik Coats and the Bioinformatics Core from the University of Idaho. The Coats lab has sampled AS from different waste water treatment setups: from a full-scale operational waste water treatment plant in Moscow, ID, to experimental sequencing batch reactors used for increasing PHA (polyhydroxyalkanoates) production which is a bioplastics precursor, to investigating more efficient EBPR (Enhanced Biological Phosphorus Removal) and nitrogen removal systems. 
+  
+The data span a range of years, and samples were collected from this variety of setups. Despite this variety, we can generally separate these systems by their intended specialized function: to remove phosphorus, to remove phosphorus and nitrogen, or to enhance PHA production.
+
+| Variable | Description | 
+| -------- | ----------- |
+| System type | Scale and setup of system. Sequencing batch reactor, scale model WRRF, full scale WRRF. |
+| Media type | Inflow media. Fermented dairy manure, synethetic wastewater, real wastewater. |
+| Bin | Function of the system. Primarily phosphorus removal (P), primarily phosphorus + nitrogen removal (PN), primarily PHA production (PHA). |
+
+88 individual samples of 16S rRNA gene sequenced on an individual run using multiplexing.
 
 ## Setup 
 
