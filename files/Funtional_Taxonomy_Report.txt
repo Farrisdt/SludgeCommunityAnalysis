@@ -1,0 +1,573 @@
+functionality	function_total	domain	phylum	class	order	family	genus	species	count	order_total
+methanotrophy	4	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Beijerinckiaceae	Methylocystis		2	403
+methanotrophy	4	Bacteria	Proteobacteria	Gammaproteobacteria	Methylococcales	Methylomonadaceae	Crenothrix		2	8
+methanol_oxidation	25	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus		20	401
+methanol_oxidation	25	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Methylophilaceae	Methylobacillus		2	1867
+methanol_oxidation	25	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Methylophilaceae	Methylotenera		3	1867
+methylotrophy	29	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Beijerinckiaceae	Methylocystis		2	403
+methylotrophy	29	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus		20	401
+methylotrophy	29	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Methylophilaceae	Methylobacillus		2	1867
+methylotrophy	29	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Methylophilaceae	Methylotenera		3	1867
+methylotrophy	29	Bacteria	Proteobacteria	Gammaproteobacteria	Methylococcales	Methylomonadaceae	Crenothrix		2	8
+aerobic_nitrite_oxidation	6	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Nitrobacter		1	403
+aerobic_nitrite_oxidation	6	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Gallionellaceae			5	1867
+nitrification	6	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Nitrobacter		1	403
+nitrification	6	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Gallionellaceae			5	1867
+sulfur_respiration	5	Bacteria	Campylobacterota	Campylobacteria	Campylobacterales	Sulfurospirillaceae	Sulfurospirillum		5	10
+thiosulfate_respiration	7	Bacteria	Firmicutes	Clostridia		Fusibacteraceae	Fusibacter		5	78
+thiosulfate_respiration	7	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Alteromonadaceae	Alishewanella		2	49
+respiration_of_sulfur_compounds	12	Bacteria	Campylobacterota	Campylobacteria	Campylobacterales	Sulfurospirillaceae	Sulfurospirillum		5	10
+respiration_of_sulfur_compounds	12	Bacteria	Firmicutes	Clostridia		Fusibacteraceae	Fusibacter		5	78
+respiration_of_sulfur_compounds	12	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Alteromonadaceae	Alishewanella		2	49
+nitrate_denitrification	69	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+nitrate_denitrification	69	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus		20	401
+nitrate_denitrification	69	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Zoogloea		47	1867
+nitrite_denitrification	69	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+nitrite_denitrification	69	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus		20	401
+nitrite_denitrification	69	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Zoogloea		47	1867
+nitrous_oxide_denitrification	69	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+nitrous_oxide_denitrification	69	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus		20	401
+nitrous_oxide_denitrification	69	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Zoogloea		47	1867
+denitrification	69	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+denitrification	69	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus		20	401
+denitrification	69	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Zoogloea		47	1867
+chitinolysis	16	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Lysobacter		16	89
+dark_hydrogen_oxidation	95	Bacteria	Firmicutes	Clostridia	Eubacteriales	Eubacteriaceae	Acetobacterium		2	8
+dark_hydrogen_oxidation	95	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Acetitomaculum		7	53
+dark_hydrogen_oxidation	95	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Xanthobacter		2	403
+dark_hydrogen_oxidation	95	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus		20	401
+dark_hydrogen_oxidation	95	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Hydrogenophaga		64	1867
+nitrogen_fixation	27	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Beijerinckiaceae	Methylocystis		2	403
+nitrogen_fixation	27	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Mesorhizobium		18	403
+nitrogen_fixation	27	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Xanthobacter		2	403
+nitrogen_fixation	27	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Azospira		4	1867
+nitrogen_fixation	27	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Azotobacter		1	209
+nitrite_respiration	113	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+nitrite_respiration	113	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus		20	401
+nitrite_respiration	113	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Thauera		44	1867
+nitrite_respiration	113	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Zoogloea		47	1867
+cellulolysis	17	Bacteria	Bacteroidota	Bacteroidia	Chitinophagales	Saprospiraceae	Lewinella		9	145
+cellulolysis	17	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Cytophagaceae	Cytophaga		8	48
+dark_sulfide_oxidation	23	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Hydrogenophilaceae	Thiobacillus		16	1867
+dark_sulfide_oxidation	23	Bacteria	Proteobacteria	Gammaproteobacteria	Thiotrichales	Thiotrichaceae	Thiothrix		7	14
+dark_oxidation_of_sulfur_compounds	31	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Beijerinckiaceae	Bosea		8	403
+dark_oxidation_of_sulfur_compounds	31	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Hydrogenophilaceae	Thiobacillus		16	1867
+dark_oxidation_of_sulfur_compounds	31	Bacteria	Proteobacteria	Gammaproteobacteria	Thiotrichales	Thiotrichaceae	Thiothrix		7	14
+manganese_oxidation	28	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Leptothrix		28	1867
+fermentation	275	Bacteria	Actinobacteriota	Actinobacteria	Actinomycetales	Actinomycetaceae	Actinomyces		1	2
+fermentation	275	Bacteria	Actinobacteriota	Actinobacteria	Bifidobacteriales	Bifidobacteriaceae	Bifidobacterium		4	8
+fermentation	275	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Brooklawnia		3	99
+fermentation	275	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Propionicicella		2	99
+fermentation	275	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides		40	165
+fermentation	275	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Dysgonomonadaceae	Dysgonomonas		2	165
+fermentation	275	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Dysgonomonadaceae	Petrimonas		3	165
+fermentation	275	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Paludibacteraceae	Paludibacter		13	165
+fermentation	275	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Rikenellaceae	Alistipes		3	165
+fermentation	275	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Rikenellaceae	Rikenella		1	165
+fermentation	275	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Tannerellaceae	Parabacteroides		7	165
+fermentation	275	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Cloacibacterium		7	430
+fermentation	275	Bacteria	Deinococcota	Deinococci	Deinococcales	Trueperaceae	Truepera		1	2
+fermentation	275	Bacteria	Firmicutes	Bacilli	Erysipelotrichales	Erysipelotrichaceae	Solobacterium		2	20
+fermentation	275	Bacteria	Firmicutes	Bacilli	Erysipelotrichales	Erysipelotrichaceae	Turicibacter		8	20
+fermentation	275	Bacteria	Firmicutes	Clostridia	Clostridiales	Clostridiaceae	Sarcina		3	6
+fermentation	275	Bacteria	Firmicutes	Clostridia	Eubacteriales	Eubacteriaceae	Acetobacterium		2	8
+fermentation	275	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Acetitomaculum		7	53
+fermentation	275	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Anaerostipes		2	53
+fermentation	275	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Coprococcus		1	53
+fermentation	275	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Roseburia		1	53
+fermentation	275	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Shuttleworthia		1	53
+fermentation	275	Bacteria	Firmicutes	Clostridia	Oscillospirales		NA		9	66
+fermentation	275	Bacteria	Firmicutes	Clostridia	Oscillospirales	Ruminococcaceae	Anaerofilum		1	66
+fermentation	275	Bacteria	Firmicutes	Clostridia	Oscillospirales	Ruminococcaceae	Faecalibacterium		6	66
+fermentation	275	Bacteria	Firmicutes	Clostridia	Oscillospirales	Ruminococcaceae	Ruminococcus		13	66
+fermentation	275	Bacteria	Firmicutes	Clostridia	Oscillospirales	Ruminococcaceae	Subdoligranulum		4	66
+fermentation	275	Bacteria	Firmicutes	Clostridia		Acidaminobacteraceae	Acidaminobacter		1	78
+fermentation	275	Bacteria	Firmicutes	Clostridia		Anaerovoracaceae	Anaerovorax		1	78
+fermentation	275	Bacteria	Firmicutes	Clostridia		Peptostreptococcaceae	Paeniclostridium		2	78
+fermentation	275	Bacteria	Firmicutes	Clostridia		Peptostreptococcaceae	Paraclostridium		2	78
+fermentation	275	Bacteria	Firmicutes	Clostridia		Peptostreptococcaceae	Peptostreptococcus		2	78
+fermentation	275	Bacteria	Firmicutes	Clostridia		Peptostreptococcaceae	Proteocatella		6	78
+fermentation	275	Bacteria	Firmicutes	Clostridia		Peptostreptococcaceae	Romboutsia		18	78
+fermentation	275	Bacteria	Firmicutes	Clostridia		Sedimentibacteraceae	Sedimentibacter		2	78
+fermentation	275	Bacteria	Fusobacteriota	Fusobacteriia	Fusobacteriales	Leptotrichiaceae	Leptotrichia		3	10
+fermentation	275	Bacteria	Fusobacteriota	Fusobacteriia	Fusobacteriales	Leptotrichiaceae	Sebaldella		2	10
+fermentation	275	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Burkholderiaceae	Lautropia		22	1867
+fermentation	275	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Rhodoferax		39	1867
+fermentation	275	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Propionivibrio		9	1867
+fermentation	275	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Aeromonadaceae	Tolumonas		3	49
+fermentation	275	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Citrobacter		3	49
+fermentation	275	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Succinivibrionaceae	Succinivibrio		1	49
+fermentation	275	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Enhydrobacter		6	209
+fermentation	275	Bacteria	Spirochaetota	Spirochaetia	Spirochaetales	Spirochaetaceae			2	4
+fermentation	275	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Akkermansiaceae	Akkermansia		1	271
+fermentation	275	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaceae	Verrucomicrobium		3	271
+aerobic_chemoheterotrophy	1409	Bacteria	Acidobacteriota	Acidobacteriae	Bryobacterales	Bryobacteraceae	Bryobacter		17	34
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Dietziaceae	Dietzia		1	37
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Mycobacteriaceae	Mycobacterium		15	37
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Frankiales	Nakamurellaceae	Nakamurella		1	4
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Frankiales	Sporichthyaceae	Sporichthya		1	4
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Demequinaceae	Demequina		1	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Intrasporangiaceae	Janibacter		2	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Intrasporangiaceae	Ornithinicoccus		1	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Intrasporangiaceae	Ornithinimicrobium		1	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Intrasporangiaceae	Tetrasphaera		17	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Chryseoglobus		2	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Diaminobutyricimonas		8	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Galbitalea		10	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Gulosibacter		1	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Huakuichenia		1	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Leucobacter		23	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Lysinimonas		2	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Microbacterium		1	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	NA		5	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Parafrigoribacterium		2	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Pseudoclavibacter		2	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Schumannella		1	160
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Nocardioidaceae	Aeromicrobium		2	99
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Nocardioidaceae	Marmoricola		1	99
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Nocardioidaceae	Nocardioides		12	99
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Brooklawnia		3	99
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Luteococcus		10	99
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Microlunatus		1	99
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Micropruina		4	99
+aerobic_chemoheterotrophy	1409	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Propionicicella		2	99
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Chitinophagales	Chitinophagaceae	Ferruginibacter		46	145
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Chitinophagales	Saprospiraceae	Haliscomenobacter		13	145
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Chitinophagales	Saprospiraceae	Lewinella		9	145
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Cyclobacteriaceae	Algoriphagus		1	48
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Cyclobacteriaceae	Indibacter		1	48
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Cyclobacteriaceae	Marinoscillum		3	48
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Cyclobacteriaceae	Mongoliibacter		2	48
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Cyclobacteriaceae	NA		3	48
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Cytophagaceae	Cytophaga		8	48
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Crocinitomicaceae	Crocinitomix		7	430
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Cryomorphaceae	Cryomorpha		2	430
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Aequorivita		1	430
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Flavobacterium		169	430
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Formosa		1	430
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Maribacter		1	430
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Subsaxibacter		1	430
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium		19	430
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Elizabethkingia		1	430
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Ornithobacterium		1	430
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Weeksella		1	430
+aerobic_chemoheterotrophy	1409	Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Pedobacter		20	40
+aerobic_chemoheterotrophy	1409	Bacteria	Firmicutes	Bacilli	Paenibacillales	Paenibacillaceae	Paenibacillus		3	6
+aerobic_chemoheterotrophy	1409	Bacteria	Planctomycetota	Planctomycetes	Isosphaerales	Isosphaeraceae	Isosphaera		1	2
+aerobic_chemoheterotrophy	1409	Bacteria	Planctomycetota	Planctomycetes	Pirellulales	Pirellulaceae	Blastopirellula		3	16
+aerobic_chemoheterotrophy	1409	Bacteria	Planctomycetota	Planctomycetes	Pirellulales	Pirellulaceae	Rhodopirellula		5	16
+aerobic_chemoheterotrophy	1409	Bacteria	Planctomycetota	Planctomycetes	Planctomycetales	Schlesneriaceae	Schlesneria		1	5
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Acetobacter		1	104
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Roseococcus		1	104
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Roseomonas		16	104
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Azospirillales		Stella		8	16
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Caulobacterales	Caulobacteraceae	Caulobacter		8	26
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Caulobacterales	Hyphomonadaceae	Hyphomonas		5	26
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Reyranellales	Reyranellaceae	Reyranella		5	10
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Beijerinckiaceae	Bosea		8	403
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Devosiaceae	Devosia		48	403
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Hyphomicrobiaceae	Hyphomicrobium		22	403
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Hyphomicrobiaceae	Pedomicrobium		20	403
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Labraceae	Labrys		2	403
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Mesorhizobium		18	403
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodopseudomonas		2	403
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Xanthobacter		2	403
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Amaricoccus		8	401
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Gemmobacter		9	401
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus		20	401
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Altererythrobacter		9	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae			3	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	NA		29	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Novosphingobium		31	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Polymorphobacter		1	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Qipengyuania		1	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Rhizorhapis		3	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sandaracinobacter		3	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingoaurantiacus		2	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingobium		8	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingomonas		6	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingopyxis		12	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingorhabdus		7	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingosinicella		4	244
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Acidovorax		41	1867
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Comamonas		20	1867
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Hydrogenophaga		64	1867
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Leptothrix		28	1867
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Rhodoferax		39	1867
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Rubrivivax		21	1867
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Sphaerotilus		6	1867
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Neisseriaceae	Vitreoscilla		4	1867
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Azospira		4	1867
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Dechloromonas		36	1867
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Dechlorosoma		1	1867
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Thauera		44	1867
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Zoogloea		47	1867
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Citrobacter		3	49
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Shewanellaceae	Shewanella		2	49
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Legionellales	Legionellaceae	Legionella		12	36
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter		38	209
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Enhydrobacter		6	209
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Psychrobacter		8	209
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Azotobacter		1	209
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas		28	209
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Arenimonas		11	89
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas		1	89
+aerobic_chemoheterotrophy	1409	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Thermomonas		9	89
+aerobic_chemoheterotrophy	1409	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Chthoniobacterales	Chthoniobacteraceae	Chthoniobacter		6	12
+aerobic_chemoheterotrophy	1409	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Akkermansiaceae	Akkermansia		1	271
+aerobic_chemoheterotrophy	1409	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaceae	Brevifollis		5	271
+aerobic_chemoheterotrophy	1409	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaceae	NA		40	271
+aerobic_chemoheterotrophy	1409	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaceae	Prosthecobacter		73	271
+aerobic_chemoheterotrophy	1409	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaceae	Roseimicrobium		10	271
+aerobic_chemoheterotrophy	1409	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaceae	Verrucomicrobium		3	271
+human_pathogens_all	23	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Roseomonas		16	104
+human_pathogens_all	23	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Afipia		6	403
+human_pathogens_all	23	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas		1	89
+human_gut	6	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae			2	53
+human_gut	6	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Coprococcus		1	53
+human_gut	6	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Citrobacter		3	49
+human_associated	29	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae			2	53
+human_associated	29	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Coprococcus		1	53
+human_associated	29	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Roseomonas		16	104
+human_associated	29	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Afipia		6	403
+human_associated	29	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Citrobacter		3	49
+human_associated	29	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas		1	89
+mammal_gut	6	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae			2	53
+mammal_gut	6	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Coprococcus		1	53
+mammal_gut	6	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Citrobacter		3	49
+animal_parasites_or_symbionts	57	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella		17	165
+animal_parasites_or_symbionts	57	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Prevotellaceae			10	165
+animal_parasites_or_symbionts	57	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae			2	53
+animal_parasites_or_symbionts	57	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Coprococcus		1	53
+animal_parasites_or_symbionts	57	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Roseburia		1	53
+animal_parasites_or_symbionts	57	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Roseomonas		16	104
+animal_parasites_or_symbionts	57	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Afipia		6	403
+animal_parasites_or_symbionts	57	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Citrobacter		3	49
+animal_parasites_or_symbionts	57	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas		1	89
+aromatic_hydrocarbon_degradation	1	Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Nocardiaceae	Rhodococcus		1	37
+aromatic_compound_degradation	51	Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Nocardiaceae	Rhodococcus		1	37
+aromatic_compound_degradation	51	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Nocardioidaceae	Nocardioides		12	99
+aromatic_compound_degradation	51	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter		38	209
+aliphatic_non_methane_hydrocarbon_degradation	1	Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Nocardiaceae	Rhodococcus		1	37
+hydrocarbon_degradation	5	Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Nocardiaceae	Rhodococcus		1	37
+hydrocarbon_degradation	5	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Beijerinckiaceae	Methylocystis		2	403
+hydrocarbon_degradation	5	Bacteria	Proteobacteria	Gammaproteobacteria	Methylococcales	Methylomonadaceae	Crenothrix		2	8
+iron_respiration	2	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Ferribacterium		2	1867
+nitrate_respiration	201	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Micropruina		4	99
+nitrate_respiration	201	Bacteria	Planctomycetota	Planctomycetes	Planctomycetales	Schlesneriaceae	Schlesneria		1	5
+nitrate_respiration	201	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Aquamicrobium		2	403
+nitrate_respiration	201	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Nitrobacter		1	403
+nitrate_respiration	201	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+nitrate_respiration	201	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Gemmobacter		9	401
+nitrate_respiration	201	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus		20	401
+nitrate_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Aquabacterium		16	1867
+nitrate_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Azoarcus		7	1867
+nitrate_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Azospira		4	1867
+nitrate_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Dechloromonas		36	1867
+nitrate_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Dechlorosoma		1	1867
+nitrate_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Ferribacterium		2	1867
+nitrate_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Thauera		44	1867
+nitrate_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Zoogloea		47	1867
+nitrate_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Alteromonadaceae	Alishewanella		2	49
+nitrate_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Shewanellaceae	Shewanella		2	49
+nitrate_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas		1	89
+nitrate_reduction	226	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Micropruina		4	99
+nitrate_reduction	226	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Spirosomaceae	Emticicia		2	48
+nitrate_reduction	226	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Anaerostipes		2	53
+nitrate_reduction	226	Bacteria	Planctomycetota	Planctomycetes	Planctomycetales	Schlesneriaceae	Schlesneria		1	5
+nitrate_reduction	226	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Aquamicrobium		2	403
+nitrate_reduction	226	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Nitrobacter		1	403
+nitrate_reduction	226	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+nitrate_reduction	226	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Gemmobacter		9	401
+nitrate_reduction	226	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus		20	401
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Aquabacterium		16	1867
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Ideonella		18	1867
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Azoarcus		7	1867
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Azospira		4	1867
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Dechloromonas		36	1867
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Dechlorosoma		1	1867
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Ferribacterium		2	1867
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Thauera		44	1867
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Zoogloea		47	1867
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Sutterellaceae	Sutterella		2	1867
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Alteromonadaceae	Alishewanella		2	49
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Shewanellaceae	Shewanella		2	49
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Hahellaceae	Hahella		1	209
+nitrate_reduction	226	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas		1	89
+nitrogen_respiration	201	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Micropruina		4	99
+nitrogen_respiration	201	Bacteria	Planctomycetota	Planctomycetes	Planctomycetales	Schlesneriaceae	Schlesneria		1	5
+nitrogen_respiration	201	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Aquamicrobium		2	403
+nitrogen_respiration	201	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Nitrobacter		1	403
+nitrogen_respiration	201	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+nitrogen_respiration	201	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Gemmobacter		9	401
+nitrogen_respiration	201	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus		20	401
+nitrogen_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Aquabacterium		16	1867
+nitrogen_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Azoarcus		7	1867
+nitrogen_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Azospira		4	1867
+nitrogen_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Dechloromonas		36	1867
+nitrogen_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Dechlorosoma		1	1867
+nitrogen_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Ferribacterium		2	1867
+nitrogen_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Thauera		44	1867
+nitrogen_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Zoogloea		47	1867
+nitrogen_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Alteromonadaceae	Alishewanella		2	49
+nitrogen_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Shewanellaceae	Shewanella		2	49
+nitrogen_respiration	201	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas		1	89
+fumarate_respiration	2	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Ferribacterium		2	1867
+intracellular_parasites	142	Bacteria	Proteobacteria	Alphaproteobacteria	Holosporales	Holosporaceae	Holospora		1	3
+intracellular_parasites	142	Bacteria	Proteobacteria	Alphaproteobacteria	Holosporales	Holosporaceae	NA		2	3
+intracellular_parasites	142	Bacteria	Proteobacteria	Alphaproteobacteria	Rickettsiales		NA		103	123
+intracellular_parasites	142	Bacteria	Proteobacteria	Alphaproteobacteria	Rickettsiales	Rickettsiaceae			12	123
+intracellular_parasites	142	Bacteria	Proteobacteria	Alphaproteobacteria	Rickettsiales	Rickettsiaceae	NA		7	123
+intracellular_parasites	142	Bacteria	Proteobacteria	Alphaproteobacteria	Rickettsiales	Rickettsiaceae	Rickettsia		1	123
+intracellular_parasites	142	Bacteria	Proteobacteria	Gammaproteobacteria	Legionellales	Legionellaceae	Legionella		12	36
+intracellular_parasites	142	Bacteria	Verrucomicrobiota	Chlamydiae	Chlamydiales	Criblamydiaceae	Estrella		2	4
+intracellular_parasites	142	Bacteria	Verrucomicrobiota	Chlamydiae	Chlamydiales	Parachlamydiaceae	Neochlamydia		2	4
+chlorate_reducers	37	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Dechloromonas		36	1867
+chlorate_reducers	37	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Dechlorosoma		1	1867
+predatory_or_exoparasitic	135	Bacteria	Bdellovibrionota	Bdellovibrionia	Bacteriovoracales	Bacteriovoracaceae	Bacteriovorax		2	2
+predatory_or_exoparasitic	135	Bacteria	Bdellovibrionota	Bdellovibrionia	Bdellovibrionales	Bdellovibrionaceae	Bdellovibrio		99	115
+predatory_or_exoparasitic	135	Bacteria	Bdellovibrionota	Bdellovibrionia	Bdellovibrionales	Bdellovibrionaceae			16	115
+predatory_or_exoparasitic	135	Bacteria	Myxococcota	Polyangia	Haliangiales	Haliangiaceae	Haliangium		18	18
+nonphotosynthetic_cyanobacteria	6	Bacteria	Cyanobacteria	Vampirivibrionia	Obscuribacterales	Obscuribacteraceae			6	6
+photosynthetic_cyanobacteria	10	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Coleofasciculaceae			1	28
+photosynthetic_cyanobacteria	10	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Cyanobacteriaceae			1	28
+photosynthetic_cyanobacteria	10	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Phormidiaceae			4	28
+photosynthetic_cyanobacteria	10	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Xenococcaceae			1	28
+photosynthetic_cyanobacteria	10	Bacteria	Cyanobacteria	Cyanobacteriia	Leptolyngbyales	Leptolyngbyaceae			1	4
+photosynthetic_cyanobacteria	10	Bacteria	Cyanobacteria	Cyanobacteriia	Pseudanabaenales	Pseudanabaenaceae			2	8
+anoxygenic_photoautotrophy_S_oxidizing	9	Bacteria	Bacteroidota	Chlorobia	Chlorobiales	Chlorobiaceae	Chlorobium		4	16
+anoxygenic_photoautotrophy_S_oxidizing	9	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+anoxygenic_photoautotrophy_S_oxidizing	9	Bacteria	Proteobacteria	Gammaproteobacteria	Chromatiales	Chromatiaceae	Thiocapsa		3	12
+anoxygenic_photoautotrophy	9	Bacteria	Bacteroidota	Chlorobia	Chlorobiales	Chlorobiaceae	Chlorobium		4	16
+anoxygenic_photoautotrophy	9	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+anoxygenic_photoautotrophy	9	Bacteria	Proteobacteria	Gammaproteobacteria	Chromatiales	Chromatiaceae	Thiocapsa		3	12
+oxygenic_photoautotrophy	10	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Coleofasciculaceae			1	28
+oxygenic_photoautotrophy	10	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Cyanobacteriaceae			1	28
+oxygenic_photoautotrophy	10	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Phormidiaceae			4	28
+oxygenic_photoautotrophy	10	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Xenococcaceae			1	28
+oxygenic_photoautotrophy	10	Bacteria	Cyanobacteria	Cyanobacteriia	Leptolyngbyales	Leptolyngbyaceae			1	4
+oxygenic_photoautotrophy	10	Bacteria	Cyanobacteria	Cyanobacteriia	Pseudanabaenales	Pseudanabaenaceae			2	8
+photoautotrophy	19	Bacteria	Bacteroidota	Chlorobia	Chlorobiales	Chlorobiaceae	Chlorobium		4	16
+photoautotrophy	19	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Coleofasciculaceae			1	28
+photoautotrophy	19	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Cyanobacteriaceae			1	28
+photoautotrophy	19	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Phormidiaceae			4	28
+photoautotrophy	19	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Xenococcaceae			1	28
+photoautotrophy	19	Bacteria	Cyanobacteria	Cyanobacteriia	Leptolyngbyales	Leptolyngbyaceae			1	4
+photoautotrophy	19	Bacteria	Cyanobacteria	Cyanobacteriia	Pseudanabaenales	Pseudanabaenaceae			2	8
+photoautotrophy	19	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+photoautotrophy	19	Bacteria	Proteobacteria	Gammaproteobacteria	Chromatiales	Chromatiaceae	Thiocapsa		3	12
+photoheterotrophy	88	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Rhodopila		1	104
+photoheterotrophy	88	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Roseococcus		1	104
+photoheterotrophy	88	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+photoheterotrophy	88	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodopseudomonas		2	403
+photoheterotrophy	88	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Rhodobacter		40	401
+photoheterotrophy	88	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sandaracinobacter		3	244
+photoheterotrophy	88	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Rhodoferax		39	1867
+phototrophy	105	Bacteria	Bacteroidota	Chlorobia	Chlorobiales	Chlorobiaceae	Chlorobium		4	16
+phototrophy	105	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Coleofasciculaceae			1	28
+phototrophy	105	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Cyanobacteriaceae			1	28
+phototrophy	105	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Phormidiaceae			4	28
+phototrophy	105	Bacteria	Cyanobacteria	Cyanobacteriia	Cyanobacteriales	Xenococcaceae			1	28
+phototrophy	105	Bacteria	Cyanobacteria	Cyanobacteriia	Leptolyngbyales	Leptolyngbyaceae			1	4
+phototrophy	105	Bacteria	Cyanobacteria	Cyanobacteriia	Pseudanabaenales	Pseudanabaenaceae			2	8
+phototrophy	105	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Rhodopila		1	104
+phototrophy	105	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Roseococcus		1	104
+phototrophy	105	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+phototrophy	105	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodopseudomonas		2	403
+phototrophy	105	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Rhodobacter		40	401
+phototrophy	105	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sandaracinobacter		3	244
+phototrophy	105	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Rhodoferax		39	1867
+phototrophy	105	Bacteria	Proteobacteria	Gammaproteobacteria	Chromatiales	Chromatiaceae	Thiocapsa		3	12
+ureolysis	101	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Spirosomaceae	Emticicia		2	48
+ureolysis	101	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Roseomonas		16	104
+ureolysis	101	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Aminobacter		32	403
+ureolysis	101	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Mesorhizobium		18	403
+ureolysis	101	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Afipia		6	403
+ureolysis	101	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Rhizobacter		11	1867
+ureolysis	101	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Oxalobacteraceae	Duganella		3	1867
+ureolysis	101	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Azotobacter		1	209
+ureolysis	101	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Thermomonas		9	89
+ureolysis	101	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaceae	Verrucomicrobium		3	271
+reductive_acetogenesis	9	Bacteria	Firmicutes	Clostridia	Eubacteriales	Eubacteriaceae	Acetobacterium		2	8
+reductive_acetogenesis	9	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Acetitomaculum		7	53
+chemoheterotrophy	1855	Bacteria	Acidobacteriota	Acidobacteriae	Bryobacterales	Bryobacteraceae	Bryobacter		17	34
+chemoheterotrophy	1855	Bacteria	Acidobacteriota	Holophagae	Holophagales	Holophagaceae	NA		1	1
+chemoheterotrophy	1855	Bacteria	Acidobacteriota	Vicinamibacteria	Vicinamibacterales	Vicinamibacteraceae	Luteitalea		3	3
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Actinomycetales	Actinomycetaceae	Actinomyces		1	2
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Bifidobacteriales	Bifidobacteriaceae	Bifidobacterium		4	8
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Dietziaceae	Dietzia		1	37
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Mycobacteriaceae	Mycobacterium		15	37
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Corynebacteriales	Nocardiaceae	Rhodococcus		1	37
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Frankiales	Nakamurellaceae	Nakamurella		1	4
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Frankiales	Sporichthyaceae	Sporichthya		1	4
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Demequinaceae	Demequina		1	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Intrasporangiaceae	Janibacter		2	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Intrasporangiaceae	Ornithinicoccus		1	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Intrasporangiaceae	Ornithinimicrobium		1	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Intrasporangiaceae	Tetrasphaera		17	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Chryseoglobus		2	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Diaminobutyricimonas		8	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Galbitalea		10	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Gulosibacter		1	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Huakuichenia		1	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Leucobacter		23	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Lysinimonas		2	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Microbacterium		1	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	NA		5	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Parafrigoribacterium		2	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Pseudoclavibacter		2	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Micrococcales	Microbacteriaceae	Schumannella		1	160
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Nocardioidaceae	Aeromicrobium		2	99
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Nocardioidaceae	Marmoricola		1	99
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Nocardioidaceae	Nocardioides		12	99
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Brooklawnia		3	99
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Luteococcus		10	99
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Microlunatus		1	99
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Micropruina		4	99
+chemoheterotrophy	1855	Bacteria	Actinobacteriota	Actinobacteria	Propionibacteriales	Propionibacteriaceae	Propionicicella		2	99
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides		40	165
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Dysgonomonadaceae	Dysgonomonas		2	165
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Dysgonomonadaceae	Petrimonas		3	165
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Paludibacteraceae	Paludibacter		13	165
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Rikenellaceae	Alistipes		3	165
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Rikenellaceae	Rikenella		1	165
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Bacteroidales	Tannerellaceae	Parabacteroides		7	165
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Chitinophagales	Chitinophagaceae	Ferruginibacter		46	145
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Chitinophagales	Saprospiraceae	Haliscomenobacter		13	145
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Chitinophagales	Saprospiraceae	Lewinella		9	145
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Cyclobacteriaceae	Algoriphagus		1	48
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Cyclobacteriaceae	Indibacter		1	48
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Cyclobacteriaceae	Marinoscillum		3	48
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Cyclobacteriaceae	Mongoliibacter		2	48
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Cyclobacteriaceae	NA		3	48
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Cytophagales	Cytophagaceae	Cytophaga		8	48
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Crocinitomicaceae	Crocinitomix		7	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Cryomorphaceae	Cryomorpha		2	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Aequorivita		1	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Flavobacterium		169	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Formosa		1	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Gelidibacter		2	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Maribacter		1	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	NA		5	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Pricia		1	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Flavobacteriaceae	Subsaxibacter		1	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Chryseobacterium		19	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Cloacibacterium		7	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Elizabethkingia		1	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Ornithobacterium		1	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Flavobacteriales	Weeksellaceae	Weeksella		1	430
+chemoheterotrophy	1855	Bacteria	Bacteroidota	Bacteroidia	Sphingobacteriales	Sphingobacteriaceae	Pedobacter		20	40
+chemoheterotrophy	1855	Bacteria	Chloroflexi	Anaerolineae	Anaerolineales	Anaerolineaceae	Anaerolinea		6	93
+chemoheterotrophy	1855	Bacteria	Chloroflexi	Anaerolineae	Anaerolineales	Anaerolineaceae			58	93
+chemoheterotrophy	1855	Bacteria	Chloroflexi	Anaerolineae	Anaerolineales	Anaerolineaceae	Leptolinea		3	93
+chemoheterotrophy	1855	Bacteria	Chloroflexi	Anaerolineae	Anaerolineales	Anaerolineaceae	Levilinea		1	93
+chemoheterotrophy	1855	Bacteria	Chloroflexi	Anaerolineae	Anaerolineales	Anaerolineaceae	Longilinea		3	93
+chemoheterotrophy	1855	Bacteria	Chloroflexi	Anaerolineae	Anaerolineales	Anaerolineaceae	NA		22	93
+chemoheterotrophy	1855	Bacteria	Chloroflexi	Anaerolineae	Caldilineales	Caldilineaceae	Litorilinea		2	94
+chemoheterotrophy	1855	Bacteria	Chloroflexi	Anaerolineae	Caldilineales	Caldilineaceae	NA		92	94
+chemoheterotrophy	1855	Bacteria	Deinococcota	Deinococci	Deinococcales	Trueperaceae	Truepera		1	2
+chemoheterotrophy	1855	Bacteria	Firmicutes	Bacilli	Acholeplasmatales	Acholeplasmataceae	Acholeplasma		3	3
+chemoheterotrophy	1855	Bacteria	Firmicutes	Bacilli	Erysipelotrichales	Erysipelotrichaceae	Solobacterium		2	20
+chemoheterotrophy	1855	Bacteria	Firmicutes	Bacilli	Erysipelotrichales	Erysipelotrichaceae	Turicibacter		8	20
+chemoheterotrophy	1855	Bacteria	Firmicutes	Bacilli	Paenibacillales	Paenibacillaceae	Paenibacillus		3	6
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia	Clostridiales	Clostridiaceae	Sarcina		3	6
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia	Eubacteriales	Eubacteriaceae	Acetobacterium		2	8
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Acetitomaculum		7	53
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Anaerostipes		2	53
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Coprococcus		1	53
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Roseburia		1	53
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia	Lachnospirales	Lachnospiraceae	Shuttleworthia		1	53
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia	Oscillospirales		NA		9	66
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia	Oscillospirales	Ruminococcaceae	Anaerofilum		1	66
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia	Oscillospirales	Ruminococcaceae	Faecalibacterium		6	66
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia	Oscillospirales	Ruminococcaceae	Ruminococcus		13	66
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia	Oscillospirales	Ruminococcaceae	Subdoligranulum		4	66
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia		Acidaminobacteraceae	Acidaminobacter		1	78
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia		Anaerovoracaceae	Anaerovorax		1	78
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia		Peptostreptococcaceae	Paeniclostridium		2	78
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia		Peptostreptococcaceae	Paraclostridium		2	78
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia		Peptostreptococcaceae	Peptostreptococcus		2	78
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia		Peptostreptococcaceae	Proteocatella		6	78
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia		Peptostreptococcaceae	Romboutsia		18	78
+chemoheterotrophy	1855	Bacteria	Firmicutes	Clostridia		Sedimentibacteraceae	Sedimentibacter		2	78
+chemoheterotrophy	1855	Bacteria	Fusobacteriota	Fusobacteriia	Fusobacteriales	Leptotrichiaceae	Leptotrichia		3	10
+chemoheterotrophy	1855	Bacteria	Fusobacteriota	Fusobacteriia	Fusobacteriales	Leptotrichiaceae	Sebaldella		2	10
+chemoheterotrophy	1855	Bacteria	Planctomycetota	Planctomycetes	Isosphaerales	Isosphaeraceae	Isosphaera		1	2
+chemoheterotrophy	1855	Bacteria	Planctomycetota	Planctomycetes	Pirellulales	Pirellulaceae	Blastopirellula		3	16
+chemoheterotrophy	1855	Bacteria	Planctomycetota	Planctomycetes	Pirellulales	Pirellulaceae	Rhodopirellula		5	16
+chemoheterotrophy	1855	Bacteria	Planctomycetota	Planctomycetes	Planctomycetales	Schlesneriaceae	Schlesneria		1	5
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Acetobacter		1	104
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Roseococcus		1	104
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Acetobacterales	Acetobacteraceae	Roseomonas		16	104
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Azospirillales		Stella		8	16
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Caulobacterales	Caulobacteraceae	Caulobacter		8	26
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Caulobacterales	Hyphomonadaceae	Hyphomonas		5	26
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Reyranellales	Reyranellaceae	Reyranella		5	10
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Beijerinckiaceae	Bosea		8	403
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Beijerinckiaceae	Methylocystis		2	403
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Devosiaceae	Devosia		48	403
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Hyphomicrobiaceae	Hyphomicrobium		22	403
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Hyphomicrobiaceae	Pedomicrobium		20	403
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Labraceae	Labrys		2	403
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Rhizobiaceae	Mesorhizobium		18	403
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodoplanes		2	403
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Rhodopseudomonas		2	403
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Rhizobiales	Xanthobacteraceae	Xanthobacter		2	403
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Amaricoccus		8	401
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Gemmobacter		9	401
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Rhodobacterales	Rhodobacteraceae	Paracoccus		20	401
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Altererythrobacter		9	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae			3	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	NA		29	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Novosphingobium		31	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Polymorphobacter		1	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Qipengyuania		1	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Rhizorhapis		3	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sandaracinobacter		3	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingoaurantiacus		2	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingobium		8	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingomonas		6	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingopyxis		12	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingorhabdus		7	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Alphaproteobacteria	Sphingomonadales	Sphingomonadaceae	Sphingosinicella		4	244
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Burkholderiaceae	Lautropia		22	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Acidovorax		41	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Comamonas		20	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Hydrogenophaga		64	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Leptothrix		28	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Rhodoferax		39	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Rubrivivax		21	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Comamonadaceae	Sphaerotilus		6	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Methylophilaceae	Methylobacillus		2	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Methylophilaceae	Methylotenera		3	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Neisseriaceae	Vitreoscilla		4	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Azospira		4	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Dechloromonas		36	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Dechlorosoma		1	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Propionivibrio		9	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Thauera		44	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Burkholderiales	Rhodocyclaceae	Zoogloea		47	1867
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Aeromonadaceae	Tolumonas		3	49
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Enterobacteriaceae	Citrobacter		3	49
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Shewanellaceae	Shewanella		2	49
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Enterobacterales	Succinivibrionaceae	Succinivibrio		1	49
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Legionellales	Legionellaceae	Legionella		12	36
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Methylococcales	Methylomonadaceae	Crenothrix		2	8
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Acinetobacter		38	209
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Enhydrobacter		6	209
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Moraxellaceae	Psychrobacter		8	209
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Azotobacter		1	209
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Pseudomonadales	Pseudomonadaceae	Pseudomonas		28	209
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Arenimonas		11	89
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Lysobacter		16	89
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Stenotrophomonas		1	89
+chemoheterotrophy	1855	Bacteria	Proteobacteria	Gammaproteobacteria	Xanthomonadales	Xanthomonadaceae	Thermomonas		9	89
+chemoheterotrophy	1855	Bacteria	Spirochaetota	Spirochaetia	Spirochaetales	Spirochaetaceae			2	4
+chemoheterotrophy	1855	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Chthoniobacterales	Chthoniobacteraceae	Chthoniobacter		6	12
+chemoheterotrophy	1855	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Akkermansiaceae	Akkermansia		1	271
+chemoheterotrophy	1855	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaceae	Brevifollis		5	271
+chemoheterotrophy	1855	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaceae	NA		40	271
+chemoheterotrophy	1855	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaceae	Prosthecobacter		73	271
+chemoheterotrophy	1855	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaceae	Roseimicrobium		10	271
+chemoheterotrophy	1855	Bacteria	Verrucomicrobiota	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaceae	Verrucomicrobium		3	271
