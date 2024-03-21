@@ -1,6 +1,7 @@
 ---
 title: "Sludge Community Analysis"
 output: html_document
+authors: "Leyla Cufurovic and Ruben Lancaster"
 date: "2023-10-23"
 editor_options: 
   chunk_output_type: console
@@ -204,8 +205,9 @@ head(taxa.print)
 asv <- t(seqtab.nochim)
 ```
 
-```{r export asv}
+```{r export asv and taxa}
 write_tsv(asv_names, "./files/asv_counts.tsv")
+write_tsv(as.data.frame(taxa), "./files/taxa_silva_dada2.tsv"
 ```
 
 ## Phyloseq
