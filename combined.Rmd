@@ -64,26 +64,36 @@ The data span a range of years, and samples were collected from this variety of 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library("dada2")
-library("devtools")
-library("phyloseq")
-library("Biostrings")
-library("ggplot2")
-library("gridExtra")
-library("dplyr")
+
+# load packages for general data processing #
+library(devtools)
 library(tidyverse)
+library(tibble)
+library(dplyr)
+library(DT)
+library(multcomp)
+
+# load packages for general data visualization #
+library(ggh4x)
+library(viridis)
+library(ggplot2)
+library(gridExtra)
+
+# load packages for microbiome-specific analyses #
+library(dada2)
+library(phyloseq)
+library(Biostrings)
 library(DECIPHER)
 library(phangorn)
-library(tibble)
-library(ggh4x)
 library(microbiome)
-library(viridis)
 library(ANCOMBC)
-library(DT)
 library(vegan)
-library(multcomp)
 library(fantaxtic)
+library(magrittr) # fantaxtic depend
+library(ggnested) # fantaxtic depend
 
+# override select functions from other packages # 
+select = dplyr::select
 ```
 
 ```{r Set up directory}
@@ -806,8 +816,6 @@ res_global_passed = res_global %>% filter(passed_ss == TRUE) %>% filter(diff_abn
 diff_taxons = res_global_passed$taxon
 diff_taxons
 ```
-
-We can also visualize the diversity of functions present in each system. 
 
 # Bray Curtis NMDS 
 
