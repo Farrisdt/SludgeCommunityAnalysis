@@ -6,6 +6,11 @@ editor_options:
   chunk_output_type: console
 ---
 
+## Acknowledgements
+
+Thank you to our collaborator Dr. Erik Coats and our BGMP mentor Dr. Maxine Wren for technical support on this project. 
+Data collection and analyses performed by the IIDS Genomics and Bioinformatics Resources Core at the University of Idaho were supported in part by NIH COBRE grant P30GM103324.
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library("dada2")
