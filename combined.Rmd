@@ -28,6 +28,8 @@ R 4.3.1 was used for all computations. The following packages were used:
 | ggpubr | general data visualization |
 | viridis | colors for data visualization |
 | rstatix | general data processing and visualization | 
+| extrafont | fonts for data visualization |
+| showtext | fonts for data visualization |
 | vegan | microbial community analysis |
 | phyloseq | microbial community analysis | 
 | microbiome | microbial community analysis |
@@ -626,7 +628,7 @@ p = plot_nested_bar(ps_obj = top_asv$ps_obj,
   xlab("") +
   ggtitle("Top 10 Orders across all samples")
 p
-ggsave(filename = "topfunction_order_all.png", plot = p, path = "./files/images/relative_abundance", width = 7, height = 7, units = "in")
+ggsave(filename = "top10_order_all.png", plot = p, path = "./files/images/relative_abundance", width = 7, height = 7, units = "in")
 
 # Now, top 10 by separated by Bin
 phyobj_all = backup_var_phyobj_all
@@ -639,9 +641,9 @@ p = plot_nested_bar(ps_obj = top_asv$ps_obj,
   xlab("")+
   ggtitle("Top 10 Orders by Bin")
 p
-ggsave(filename = "topfunction_order_bin.png", plot = p, path = working_directory)
+ggsave(filename = "top10_order_bin.png", plot = p, path = "./files/images/relative_abundance", width = 8, height = 7, units = "in")
 
-# Find top Classes
+# Find top 3 Classes
 top_nested <- nested_top_taxa(phyobj_all,
                               top_tax_level = "Class",
                               nested_tax_level = "Order",
@@ -652,18 +654,23 @@ p = plot_nested_bar(ps_obj = top_nested$ps_obj,
                 nested_level = "Order")+
   ggtitle("Top 3 orders of top 3 classes")
 p
-ggsave("top_3_class_order.png", plot = p, path = working_directory)
+ggsave(filename = "top3_class_all.png", plot = p, path = "./files/images/relative_abundance", width = 9, height = 7, units = "in")
+
 
 # Find top n by Variable Type 
 top_grouped <- top_taxa(phyobj_all,
                         tax_level = "Order",
-                        n_taxa = 5,
+                        n_taxa = 10,
                         grouping = "Bin")
-top_grouped$top_taxa %>% ggplot(aes(x=Bin, y = abundance*100, fill = Order)) +
+p = top_grouped$top_taxa %>% ggplot(aes(x=Bin, y = abundance*100, fill = Order)) +
   geom_bar(stat = "identity")+
-  ylab("Percent abundance")
+  ylab("Percent abundance")+
+  ggtitle("Top 10 orders in each Bin")
+p
+ggsave(filename = "top10_each_order_bin.png", plot = p, path = "./files/images/relative_abundance", width = 8, height = 7, units = "in")
 
-# change levels 
+
+# Top 3 orders of top 3 classes by Bin
 
 vars = get_variable(phyobj_all, "System_Name")
 vars = factor(vars)
@@ -671,8 +678,6 @@ levels = levels(vars)
 corlevels = c(levels[1:11], "Winkler I", "Winkler J", "Production Run BSC", "Full Enrichment BSC", "SEBPR", "FEBPR", "GEBPR","NF", "MWWTP", "scalemodel")
 sample_data(phyobj_all)$System.Name = levels(corlevels)
 
-
-# Facet wrap 
 top_nested <- nested_top_taxa(phyobj_all,
                           top_tax_level = "Class",
                           nested_tax_level = "Order",
@@ -692,7 +697,7 @@ p = plot_nested_bar(top_nested$ps_obj,
         legend.key.size = unit(10, 
                                "points"))
 p
-ggsave("top_3_classes_top5_order_bin.png", plot = p, path = working_directory, width = 8000, height = 4000, units = "px", dpi = 380)
+ggsave("top_3_classes_top5_order_bin.png", plot = p, path = "./files/images/relative_abundance", width = 9000, height = 4000, units = "px", dpi = 380)
 ```
 
 ```{r Top taxa poster figure generation}
@@ -703,12 +708,12 @@ ggsave("top_3_classes_top5_order_bin.png", plot = p, path = working_directory, w
 
 library(extrafont)
 library(showtext)
-font_add(family = "skeena", regular = "\\\\wsl.localhost/Ubuntu/home/ruben/bioinfo/sludge/skeena_d.ttf")
-showtext_auto()
+font_add(family = "skeena", regular = "\\\\wsl.localhost/Ubuntu/home/ruben/bioinfo/sludge/skeena_d.ttf") # you'll need to download skeena_d.ttf, can't host it on github
+showtext_auto() 
 
 #Find top 10 across all samples
 norm_ps = merge_samples(phyobj_all, "Bin")
-norm_ps@sam_data$Bin = factor(norm_ps@sam_data$Bin, levels = c("PN", "P", "PHA"))
+norm_ps@sam_data$Bin = factor(norm_ps@sam_data$Bin, levels = c("N and P removal", "P removal", "PHA bioplastics reactor"))
 top_asv <- top_taxa(norm_ps, n_taxa = 10, tax_level = "Order")
 
 # options(repr.plot.width = 4, repr.plot.height =1.5) 
@@ -719,7 +724,7 @@ p3 = plot_nested_bar(ps_obj = top_asv$ps_obj,
                                  Bacteroidia = "#871762",
                                  Gammaproteobacteria = "#FFBB33"),
                      merged_clr = "#919191",
-                     sample_order = c("PN", "P", "PHA"),
+                     sample_order = c("N and P removal", "P removal", "PHA bioplastics reactor"),
                      legend_title = "Orders by Class") +
   labs(title = "10 most represented orders") +
   theme_light() +
@@ -737,11 +742,12 @@ p3 = plot_nested_bar(ps_obj = top_asv$ps_obj,
 
 
 p3
-ggsave("top_10_orders_bin.png", plot = p3, path = working_directory, width = 7, height = 4.5, units = "in", dpi = 300)
+ggsave("top_10_orders_bin.png", plot = p3, path = "./files/images/poster_figures", width = 8, height = 4.5, units = "in", dpi = 300)
 ```
 
+ANCOM-BC is an analysis for microbiome differential abundance. Here, we'll identify globally diferentially abundant taxa. 
+
 ```{r ANCOMBC analysis}
-# Code courtesy of Dr. Maxine Wren, modified for this data
 
 # remove collinear variables from the metadata
 filtered_meta = meta %>% dplyr::select(-c("System_Type", "Media_Type_1"))
@@ -768,6 +774,7 @@ sample_data(filtered_ps)$Bin <- factor(sample_data(filtered_ps)$Bin,
                                       levels=c("PHA bioplastics reactor", 
                                                "N and P removal", 
                                                "P removal"))
+
 # If I do the fix_formula as System.Name + Collection.Date + Bin it gives me an error about checking for collinearity or missing values in my covariates, so I am just running it with "bin" as the formula.
 
 ancombc_out = ancombc2(filtered_ps,
@@ -858,7 +865,6 @@ We can also visualize the diversity of functions present in each system.
 # p1
 # ggsave(filename = "topfunction_bin.png", plot = p1, path = working_directory)
 ```
-
 
 # Bray Curtis NMDS 
 
@@ -1543,6 +1549,7 @@ p1 = psmelt(merged_ps) %>%
 p1
 ggsave(filename = "topfunction_bin.png", plot = p1, path = working_directory)
 ```
+
 We can see exactly what taxa are the most represented in these systems. 
 
 ```{r fantaxtic top genera}
