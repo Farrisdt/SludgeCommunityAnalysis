@@ -11,6 +11,8 @@ editor_options:
 Thank you to our collaborator Dr. Erik Coats and our BGMP mentor Dr. Maxine Wren for technical support on this project. 
 Data collection and analyses performed by the IIDS Genomics and Bioinformatics Resources Core at the University of Idaho were supported in part by NIH COBRE grant P30GM103324.
 
+## Setup 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library("dada2")
@@ -35,7 +37,6 @@ library(fantaxtic)
 
 ```
 
-
 ```{r Set up directory}
 path_R1 <- "/Users/leycufur/bioinfo/Bi624/Sludge/DADA2/R1_raw_reads" # CHANGE ME to the directory containing the fastq files after unzipping.
 path_R2 <- "/Users/leycufur/bioinfo/Bi624/Sludge/DADA2/R2_raw_reads" # CHANGE ME to the directory containing the fastq files after unzipping.
@@ -54,7 +55,7 @@ fnRs <- sort(list.files(path_R2, pattern="_R2.fastq", full.names = TRUE))
 sample.names <- sapply(strsplit(basename(fnFs), "_"), `[`, 1)
 ```
 
-Ruben starts after the asv is made 
+## Run DADA2 to resolve ASVs
 
 ```{r Inspect read quality profiles}
 # Create the plots
@@ -137,7 +138,7 @@ head(taxa.print)
 asv <- t(seqtab.nochim)
 ```
 
-# Phyloseq
+## Phyloseq
 
 ```{r Setting up a dataframe for phyloseq}
 
@@ -173,6 +174,8 @@ ps <- merge_phyloseq(ps, dna)
 taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
 
 ```
+
+We can evaluate the overall alpha diversity of all the samples to get a general understanding of the spread of alpha diversity. Here are diversity values using richness, Shannon's, and Simpson's index calculations from the vegan package. 
 
 ```{r Overall alpha diversity evaluation by sample}
 # prepare data into long format 
