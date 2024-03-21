@@ -362,15 +362,15 @@ sum(is.na(tax_df$Genus))/length(tax_df$Genus)
 
 p1 = plot_richness(ps,x = "Media_Type_1", measures=c("Shannon", "Simpson"), color="Media_Type_1")
 p1
-ggsave(filename = "shannon_simpson_mediatype.png", plot = p1, path = "./files/images", width = 7, height = 7, units = "in")
+ggsave(filename = "shannon_simpson_mediatype.png", plot = p1, path = "./files/images/alpha_diversity", width = 7, height = 7, units = "in")
 
 p1 = plot_richness(ps,x = "System_Type", measures=c("Shannon", "Simpson"), color="System_Type")
 p1
-ggsave(filename = "shannon_simpson_systemtype.png", plot = p1, path = "./files/images", width = 7, height = 7, units = "in")
+ggsave(filename = "shannon_simpson_systemtype.png", plot = p1, path = "./files/images/alpha_diversity", width = 7, height = 7, units = "in")
 
 p1 = plot_richness(ps,x = "Bin", measures=c("Shannon", "Simpson"), color="Bin")
 p1
-ggsave(filename = "shannon_simpson_bin.png", plot = p1, path = "./files/images", width = 7, height = 7, units = "in")
+ggsave(filename = "shannon_simpson_bin.png", plot = p1, path = "./files/images/alpha_diversity", width = 7, height = 7, units = "in")
 ```
 
 Here we use Shannon’s index, which considers both richness and evenness and tends to outperform Simpson’s index when many rarely occurring species are present, which is suitable for our dataset.
@@ -420,7 +420,7 @@ p1 = plot_richness(phyobj_all, measures = c("Shannon"), x= "Bin")+
 
 p1
 #Save plot
-ggsave(filename = "shannons_bin_anova.png", plot = p1, path = "./files/images", width = 7, height = 7, units = "in")
+ggsave(filename = "shannons_bin_anova.png", plot = p1, path = "./files/images/alpha_diversity", width = 7, height = 7, units = "in")
 ```
 
 ## Community structure with Euler diagrams 
@@ -441,9 +441,9 @@ set.seed(125)
 euler3 = ps_euler(phyobj_all, "Bin", quantities = list(type=c("percent")), fraction = 0, shape = "ellipse", weight = TRUE, relative = TRUE, fill = c("#347F92", "#A6CEE3","#94DE11" ))
 p3 = grid.arrange(grobs = list(euler3), top = "Bin, Full Sample")
 
-ggsave(filename = "euler_media.png", plot = p1, path = "./files/images", width = 7, height = 4, units = "in")
-ggsave(filename = "euler_system.png", plot = p2, path = "./files/images", width = 7, height = 4, units = "in")
-ggsave(filename = "euler_bin.png", plot = p3, path = "./files/images", width = 7, height = 4, units = "in")
+ggsave(filename = "euler_media.png", plot = p1, path = "./files/images/beta_diversity", width = 7, height = 4, units = "in")
+ggsave(filename = "euler_system.png", plot = p2, path = "./files/images/beta_diversity", width = 7, height = 4, units = "in")
+ggsave(filename = "euler_bin.png", plot = p3, path = "./files/images/beta_diversity", width = 7, height = 4, units = "in")
 ```
 
 ## Beta Diversity analysis
@@ -749,7 +749,7 @@ p3
 ggsave("top_10_orders_bin.png", plot = p3, path = "./files/images/poster_figures", width = 8, height = 4.5, units = "in", dpi = 300)
 ```
 
-ANCOM-BC is an analysis for microbiome differential abundance. Here, we'll identify globally diferentially abundant taxa. 
+ANCOM-BC is an analysis for microbiome differential abundance. Here, we'll identify globally differentially abundant taxa. 
 
 ```{r ANCOMBC analysis}
 
@@ -799,6 +799,7 @@ ancombc_out = ancombc2(filtered_ps,
 # taxon presence/absence
 tab_zero = ancombc_out$zero_ind %>% column_to_rownames(var = "taxon") #%>% mutate(sum = rowSums(.)) %>% filter(sum == 2)
 
+# grab globally differential taxa from ancombc results object #
 res_prim = ancombc_out$res
 res_global= ancombc_out$res_global %>% mutate_if(is.numeric, function(x) round(x, 5))
 res_global_passed = res_global %>% filter(passed_ss == TRUE) %>% filter(diff_abn == TRUE)
@@ -807,68 +808,6 @@ diff_taxons
 ```
 
 We can also visualize the diversity of functions present in each system. 
-
-```{r Relative Abundance: by functionality}
-
-# Replace with Farris stuff here # 
-
-#Filter out subgroupings of functionality
-# fapro_filt = fapro_raw %>% t() %>% as.data.frame() %>%  dplyr::select(-c(oxygenic_photoautotrophy, methanol_oxidation, dark_sulfide_oxidation, aerobic_nitrite_oxidation, human_gut, human_pathogens_all, mammal_gut, anoxygenic_photoautotrophy, anoxygenic_photoautotrophy_S_oxidizing, photosynthetic_cyanobacteria, photoheterotrophy, thiosulfate_respiration, methanotrophy, aliphatic_non_methane_hydrocarbon_degradation, iron_respiration, aerobic_chemoheterotrophy, nitrite_respiration, photoautotrophy, sulfur_respiration, nitrate_denitrification, nitrite_denitrification, nitrous_oxide_denitrification, denitrification, nitrate_respiration, nitrogen_respiration, human_associated, aromatic_hydrocarbon_degradation, chloroplasts)) %>% t()
-
-# func_ASV = otu_table(fapro_raw, taxa_are_rows = TRUE)
-# SAMPLE = sample_data(meta)
-# phyobj_func = phyloseq(func_ASV, SAMPLE)
-# 
-# # plot all functions by each individual sample
-# merged_ps_phylum_SysName = merge_samples(phyobj_func, "System.Name") 
-# ps_phylum1_relabun = transform_sample_counts(merged_ps_phylum_SysName, function(OTU) OTU/sum(OTU) * 100)
-# myColors <- c("#645fe8", "#6ebf25", "#872bb2", "#38d65f", "#a725ae", "#51c33b", "#cd6af2", "#009a1a", "#d10f9a", "#4ee084", "#f21174", "#01d6a8", "#da1932", "#01d0ba", "#c9003a", "#009946", "#ff78ee", "#247f00", "#0262e8", "#abb900", "#533fb3", "#9cd763", "#807dff", "#ffa331", "#015bb2", "#e8690c", "#1ebdff", "#cf4301", "#b091ff", "#898600", "#5f419a", "#5e7600", "#ff99f0", "#186012", "#c7006c", "#90d792", "#8f2871", "#cacb75", "#ff61a3", "#007c54", "#e24224", "#008d8d", "#ff914a", "#94bcff", "#bc7100", "#e0b1ff", "#9b7900", "#ffabef", "#325c2c", "#ffa8c9", "#5c5312", "#c492be", "#b75c00", "#7cc9af", "#962b3b", "#e5c276", "#72426a", "#f6ba8e", "#922e4f", "#6b4e00", "#ff8e98", "#854900", "#ff9182", "#7f4a34", "#ff9972", "#8e371c", "#d38f81", "#996549","#645fe8", "#6ebf25", "#872bb2", "#38d65f", "#a725ae", "#51c33b", "#cd6af2", "#009a1a", "#d10f9a", "#4ee084", "#f21174", "#01d6a8", "#da1932", "#01d0ba", "#c9003a", "#009946", "#ff78ee", "#247f00", "#0262e8", "#abb900", "#533fb3", "#9cd763", "#807dff", "#ffa331", "#015bb2", "#e8690c", "#1ebdff", "#cf4301", "#b091ff", "#898600", "#5f419a", "#5e7600", "#ff99f0", "#186012", "#c7006c", "#90d792", "#8f2871", "#cacb75", "#ff61a3", "#007c54", "#e24224", "#008d8d", "#ff914a", "#94bcff", "#bc7100", "#e0b1ff", "#9b7900", "#ffabef", "#325c2c", "#ffa8c9", "#5c5312", "#c492be", "#b75c00", "#7cc9af", "#962b3b", "#e5c276", "#72426a", "#f6ba8e", "#922e4f", "#6b4e00", "#ff8e98", "#854900", "#ff9182", "#7f4a34", "#ff9972", "#8e371c", "#d38f81", "#996549")
-# p = psmelt(ps_phylum1_relabun) %>%
-#         ggplot(aes(x = Sample, y = Abundance, fill = OTU)) +
-#         geom_bar(stat = "identity") +
-#         theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
-#         labs(y = "Relative Abundance", title = "Relative abundances of tagged functions", x = "") + 
-#         guides(fill="none") + scale_fill_manual(name = "Class", values=myColors) 
-# p
-# ggsave(filename = "allfunctions_systemname.png", plot = p, path = working_directory)
-# 
-# # get top functions for bins
-# 
-# func_ASV = otu_table(fapro_raw, taxa_are_rows = TRUE)
-# phyobj_func = phyloseq(func_ASV, SAMPLE)
-# 
-# ps = phyobj_func
-# 
-# p = subset_samples(ps, Bin == "P")
-# p10 = names(sort(taxa_sums(p), TRUE)[1:10])
-# pn = subset_samples(ps, Bin == "PN")
-# pn10 = names(sort(taxa_sums(pn), TRUE)[1:10])
-# pha = subset_samples(ps, Bin == "PHA")
-# pha10 = r10 = names(sort(taxa_sums(pha), TRUE)[1:10])
-# top10 = unique(c(pha10, p10, pn10))
-# 
-# ps = prune_species(top10, ps)
-# 
-# merged_ps = merge_samples(ps, "Bin") #change what variable here
-# 
-# merged_ps = transform_sample_counts(merged_ps, function(OTU) OTU/sum(OTU) * 100)
-# 
-# #get the number of unique functions and select that many colors as above
-# 
-# myColors <- c("#006403", "#9d55dd", "#d5b500", "#88258e", "#a9d382", "#b0008a", "#d04b00", "#0082d2", "#ff635a", "#e99eff", "#814030", "#fcb0d3", "#9c1b5c", "firebrick", "#a0029b", "seagreen")
-# # tax_df = otu_table(ps) %>% as.data.frame()
-# # names(myColors) <- rownames(tax_df)
-# 
-# p1 = psmelt(merged_ps) %>% 
-#   ggplot(aes(x = Sample, y = Abundance, fill = OTU)) +
-#         geom_bar(stat = "identity") +
-#         theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
-#         labs(y = "Relative Abundance", title = "Most common functions", x = "") +
-#         scale_fill_manual(values=myColors) + 
-#         guides(fill=guide_legend(title="Function")) + theme_bw()
-# p1
-# ggsave(filename = "topfunction_bin.png", plot = p1, path = working_directory)
-```
 
 # Bray Curtis NMDS 
 
