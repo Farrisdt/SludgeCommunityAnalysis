@@ -692,7 +692,7 @@ p
 ggsave(filename = "top10_each_order_bin.png", plot = p, path = "./files/images/relative_abundance", width = 8, height = 7, units = "in")
 
 
-# Top 3 orders of top 3 classes by Bin
+# Top orders of top 10 classes by Bin
 
 vars = get_variable(phyobj_all, "System_Name")
 vars = factor(vars)
@@ -712,14 +712,14 @@ p = plot_nested_bar(top_nested$ps_obj,
   facet_wrap(~Bin,
              scales = "free_x",
              ncol = 6) +
-  labs(title = "Relative abundances of the top 3 orders for each of the top 3 classes") +
+  labs(title = "Relative abundances of the top order in the top 10 classes") +
   theme(plot.title = element_text(hjust = 0.5, 
                                   size = 20, 
                                   face = "bold"),
         legend.key.size = unit(10, 
                                "points"))
 p
-ggsave("top_3_classes_top5_order_bin.png", plot = p, path = "./files/images/relative_abundance", width = 9000, height = 4000, units = "px", dpi = 380)
+ggsave("top_order_top10_classes_bin.png", plot = p, path = "./files/images/relative_abundance", width = 7, height = 3, units = "in")
 ```
 
 ```{r Top taxa poster figure generation}
@@ -813,10 +813,7 @@ ancombc_out = ancombc2(filtered_ps,
                              )
 ```
 
-```{r taxon presence/absence}
-# taxon presence/absence
-tab_zero = ancombc_out$zero_ind %>% column_to_rownames(var = "taxon") #%>% mutate(sum = rowSums(.)) %>% filter(sum == 2)
-
+```{r globally differentially abundant taxa}
 # grab globally differential taxa from ancombc results object #
 res_prim = ancombc_out$res
 res_global= ancombc_out$res_global %>% mutate_if(is.numeric, function(x) round(x, 5))
@@ -824,6 +821,20 @@ res_global_passed = res_global %>% filter(passed_ss == TRUE) %>% filter(diff_abn
 diff_taxons = res_global_passed$taxon
 diff_taxons
 ```
+
+```{r taxon presence/absence by order}
+
+# grab taxons with structural zeroes: this is presence/absence. 0 (struc zero false) is presence, 1 (struc zero true) is absence # 
+tab_zero = ancombc_out$zero_ind %>% column_to_rownames(var = "taxon") %>% as.data.frame()
+# tab_zero$`structural_zero (Bin = PHA bioplastics reactor)` = tab_zero$`structural_zero (Bin = PHA bioplastics reactor)` %>% as.numeric()
+# tab_zero$`structural_zero (Bin = N and P removal)` = tab_zero$`structural_zero (Bin = N and P removal)` %>% as.numeric()
+# tab_zero$`structural_zero (Bin = P removal)` = tab_zero$`structural_zero (Bin = P removal)` %>% as.numeric()
+colnames(tab_zero) = c("PHA bioplastics reactor", "N and P removal", "P removal")
+
+```
+
+
+
 
 # Bray Curtis NMDS 
 
@@ -843,8 +854,10 @@ physeq_ord <- ordinate(
 stress = as.character(round(physeq_ord$stress, digits = 3)) # extract stress measurement from ordination object #
 stresslab = paste("Stress =", stress) # make label string #
 
-p = stressplot(physeq_ord) # plot shepard diagram to visualize goodness of fit# 
-ggsave("nmds_shepard_stress_diagram.png", plot = p, path= "./files/images/beta_diversity")
+# plot shepard diagram to visualize goodness of fit# 
+png(filename="./files/images/beta_diversity/nmds_shepard_stress_diagram.png") # open png to write to
+stressplot(physeq_ord) # plot
+dev.off() # close device
 
 # The closer the stress is to 0, the better the fit, with 0 being a perfect representation of higher-dimensional data in lower-dimensional space. Generally, measures below 0.1 are ideal, and measures between 0.2-0.3 are acceptable. Measures higher than 0.3 are considered worse. #
 
@@ -866,7 +879,7 @@ p1 = plot_ordination(
   annotate("text", x = 2, y = -2.5, label = "Non-metric fit, R² = 0.985")
 
 p1
-ggsave("nmds_Bin.png", plot = p1, path= "./files/images/beta_diversity")
+ggsave("nmds_Bin.png", plot = p1, path= "./files/images/beta_diversity", width = 4, height = 4, units = "in")
 
 # PERMANOVA + PERMDISP #
 
