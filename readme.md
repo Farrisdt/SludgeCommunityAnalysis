@@ -1,11 +1,12 @@
-## Compositional and Functional Trends in Activated Sludge Bacterial Communities
-Authors: Farris Tedder, Ruben Lancaster, Leyla Cufurovic. 
-In collaboration with Dr. Erik Coats at the University of Idaho and advised by Dr. Maxine Wren at the University of Oregon.
+### Compositional and Functional Trends in Activated Sludge Bacterial Communities
+Authors: Farris Tedder, Ruben Lancaster, Leyla Cufurovic.   
+  
+In collaboration with Dr. Erik Coats at the University of Idaho and advised by Dr. Maxine Wren at the University of Oregon.  
 
 
 This repository hosts code and files used for analysis in this project completed for the BGMP internship program.
 
-## Running this program
+#### Running this program
 
 To use program run these files in order:
  1. combined.rmd (an R script with DADA2 and alpha/beta diversity figures)
@@ -16,7 +17,7 @@ To use program run these files in order:
  3. Bacteria_Class_Counter.py (takes in FAPROTAX output and formats it for use in R)
  4. faprotax_figures.rmd (creates figures on FAPROTAX functionality)
 
-## File descriptions
+#### File descriptions
 
 | File | Description |
 | ---- | ----------- |
