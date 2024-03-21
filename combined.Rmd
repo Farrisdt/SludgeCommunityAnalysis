@@ -187,6 +187,10 @@ head(taxa.print)
 asv <- t(seqtab.nochim)
 ```
 
+```{r export asv}
+write_tsv(asv_names, "./files/asv_counts.tsv")
+```
+
 ## Phyloseq
 
 Phyloseq allows us to create a single object that holds taxonomic data, metadata, and ASV counts together.
