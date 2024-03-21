@@ -340,6 +340,8 @@ diff
 
 phyobj_all
 
+# make a filtered backup for use later with ANCOMBC# 
+filtered_phyobj_all = phyobj_all
 ```
 
 ## Data preprocessing summary
@@ -771,6 +773,8 @@ ANCOM-BC is an analysis for microbiome differential abundance. Here, we'll ident
 
 ```{r ANCOMBC analysis}
 
+# https://www.bioconductor.org/packages/release/bioc/vignettes/ANCOMBC/inst/doc/ANCOMBC2.html
+
 # remove collinear variables from the metadata
 filtered_meta = meta %>% dplyr::select(-c("System_Type", "Media_Type_1"))
 ASV = otu_table(backup_phyobj_all)
@@ -778,9 +782,14 @@ TAX = tax_table(backup_phyobj_all)
 SAMPLE = sample_data(filtered_meta)
 filtered_ps = phyloseq(ASV, TAX, SAMPLE)
 
+filtered_ps = subset_taxa(filtered_ps, Kingdom == "Bacteria")
+filtered_ps = subset_taxa(filtered_ps, Family != "Mitochondria")
+filtered_ps = subset_taxa(filtered_ps, Order != "Chloroplast")
+
 ## remove any taxa with <10 reads in the total data set (sum of all samples <10). This is because extremely rare taxa can produce a series of false positives. 
 
 filtered_ps = prune_taxa(taxa_sums(filtered_ps) > 10, filtered_ps) 
+filtered_ps
 
 #check the results of filtering
 otu_df = otu_table(filtered_ps) %>% as.data.frame() %>% mutate(sums = rowSums(.)) %>% dplyr::select(sums, everything())
@@ -824,23 +833,79 @@ diff_taxons
 
 ```{r taxon presence/absence by order}
 
-# grab taxons with structural zeroes: this is presence/absence. 0 (struc zero false) is presence, 1 (struc zero true) is absence # 
+# helpful biostars post for plotting heatmaps from presence/absence data https://www.biostars.org/p/374427/ #
+
+# grab taxons with structural zeroes# 
 tab_zero = ancombc_out$zero_ind %>% column_to_rownames(var = "taxon") %>% as.data.frame()
-# tab_zero$`structural_zero (Bin = PHA bioplastics reactor)` = tab_zero$`structural_zero (Bin = PHA bioplastics reactor)` %>% as.numeric()
-# tab_zero$`structural_zero (Bin = N and P removal)` = tab_zero$`structural_zero (Bin = N and P removal)` %>% as.numeric()
-# tab_zero$`structural_zero (Bin = P removal)` = tab_zero$`structural_zero (Bin = P removal)` %>% as.numeric()
+
+# this is presence/absence. false for struc. 0 is presence, true for struc. 0 is absence # 
+tab_zero[tab_zero == "FALSE"] = "Present"
+tab_zero[tab_zero == "TRUE"] = "Absent"
+
+# change colnames to be more readable # 
 colnames(tab_zero) = c("PHA bioplastics reactor", "N and P removal", "P removal")
 
+# convert to long format for plotting #
+tab_zero = tab_zero %>% as.matrix() # convert to matrix before reshaping to long format
+plot = reshape2::melt(tab_zero)
+
+p = plot %>% 
+  ggplot(aes(x = Var2, y = Var1, fill = value)) +
+  geom_tile() +
+  xlab("") + 
+  ylab("") + 
+  theme_bw()
+  
+ggsave("presence_absence_orders.png", plot = p, path = "./files/images/beta_diversity", width = 7, height = 12, units = "in")
 ```
 
+```{r taxon presence/absence by class}
 
+# rerun by class # 
+ancombc_out_class = ancombc2(filtered_ps,
+                             fix_formula = "Bin",
+                             tax_level = "Class",
+                             group = "Bin",
+                             struc_zero = TRUE,
+                             neg_lb = TRUE,
+                             verbose = TRUE,
+                             alpha = 0.05
+                             )
+
+# helpful biostars post for plotting heatmaps from presence/absence data https://www.biostars.org/p/374427/ #
+
+# grab taxons with structural zeroes# 
+tab_zero = ancombc_out_class$zero_ind %>% column_to_rownames(var = "taxon") %>% as.data.frame()
+
+# this is presence/absence. false for struc. 0 is presence, true for struc. 0 is absence # 
+tab_zero[tab_zero == "FALSE"] = "Present"
+tab_zero[tab_zero == "TRUE"] = "Absent"
+
+# change colnames to be more readable # 
+colnames(tab_zero) = c("PHA bioplastics reactor", "N and P removal", "P removal")
+
+# convert to long format for plotting #
+tab_zero = tab_zero %>% as.matrix() # convert to matrix before reshaping to long format
+plot = reshape2::melt(tab_zero)
+
+p = plot %>% 
+  ggplot(aes(x = Var2, y = Var1, fill = value)) +
+  geom_tile() +
+  xlab("") + 
+  ylab("") + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  ggtitle("Presence Absence by Class") +
+  theme_bw()
+  
+ggsave("presence_absence_class.png", plot = p, path = "./files/images/beta_diversity", width = 7, height = 10, units = "in")
+```
 
 
 # Bray Curtis NMDS 
 
 ```{r variance stabilized NMDS: Bin whole sample}
 set.seed(100)
-#Bray-Curtis distance matrix calculation by System Type
+#Bray-Curtis distance matrix calculation by bin Type
 
 physeq_ord <- ordinate(
  physeq = phyobj_all,
