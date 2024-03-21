@@ -54,7 +54,7 @@ The data span a range of years, and samples were collected from this variety of 
 | Media type | Inflow media. Fermented dairy manure, synethetic wastewater, real wastewater. |
 | Bin | Function of the system. Primarily phosphorus removal (P), primarily phosphorus + nitrogen removal (PN), primarily PHA production (PHA). |
 
-88 individual samples of 16S rRNA gene sequenced on an individual run using multiplexing.
+88 individual samples of 16S rRNA gene were sequenced on an individual Illumina run using multiplexing. Raw reads were demultiplexed by the UI Core and this workflow begins with demultiplexed FASTQ files (read 1: R1 and read 2: R2). 
 
 ## Setup 
 
