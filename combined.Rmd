@@ -185,6 +185,8 @@ asv <- t(seqtab.nochim)
 
 ## Phyloseq
 
+Phyloseq allows us to create a single object that holds taxonomic data, metadata, and ASV counts together.
+
 ```{r Setting up a dataframe for phyloseq}
 
 library(readxl)
@@ -219,6 +221,8 @@ ps <- merge_phyloseq(ps, dna)
 taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
 
 ```
+
+## Data preprocessing
 
 We can evaluate the overall alpha diversity of all the samples to get a general understanding of the spread of alpha diversity. Here are diversity values using richness, Shannon's, and Simpson's index calculations from the vegan package. 
 
@@ -343,6 +347,8 @@ sum(is.na(tax_df$Genus))/length(tax_df$Genus)
 
 # it looks like Family is the highest resolution possible, but we decided to go with Order for later analyses. # 
 ```
+
+## Alpha diversity measures
 
 ```{r Plot diversity measures by media type, bin type, and system type with Shannon and Simpson}
 
