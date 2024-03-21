@@ -46,7 +46,7 @@ Data collection and analyses performed by the IIDS Genomics and Bioinformatics R
   
 ## Data details 
   
-88 individual samples of 16S rRNA gene (using Eubacteria primers for the 16S V3 region) sequenced on an individual run using multiplexing.
+88 individual samples of 16S rRNA gene sequenced on an individual run using multiplexing.
 
 ```{r Load packages}
 library(ANCOMBC)
