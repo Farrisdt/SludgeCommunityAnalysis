@@ -934,17 +934,36 @@ Efforts were made at the beginning of the project to investigate Parcubacteria s
 # https://joey711.github.io/phyloseq/plot_bar-examples.html #
 
 # reset phyloseq object # 
-phyobj_all = backup_var_phyobj_all
+phyobj_all = backup_phyobj_all
 
-# normalize using DESeq2 first # 
+# normalize # 
+
+# Create a DESeq2 object. Selected experimental variable is Bin (expected function)
+diagdds <- phyloseq_to_deseq2(phyobj_all, ~Bin)
+
+#Estimate the variance between samples
+diagdds <- estimateSizeFactors(diagdds,type="poscounts")
+diagdds <- estimateDispersions(diagdds) 
+
+# Get variance stabilized data. This reduces "noise" from variation between samples that may be due to differences in amplification or sequencing depth. #
+diagvst <- getVarianceStabilizedData(diagdds) 
+
+#Now we need to make it BACK into an ASV/OTU table and slot it back into the phyloseq.
+otu_table(phyobj_all) <- otu_table(diagvst, taxa_are_rows = TRUE)
+ot_df <- data.frame(otu_table(phyobj_all))
+ot_df[ot_df < 0.0] <- 0.0 # why this?
+ot <- otu_table(ot_df, taxa_are_rows = TRUE)
+sample_names(ot) <- sample_names(phyobj_all@otu_table)
+otu_table(phyobj_all) <- otu_table(ot, taxa_are_rows = TRUE)
+
+# subset taxa to only parcubacteria # 
 phyobj_parcu = subset_taxa(phyobj_all, Class == "Parcubacteria")
 
-p = plot_bar(phyobj_parcu, "Order", fill="Order", facet_grid=~Bin)
-p + geom_bar(aes(color=Order, fill=Order), stat="identity", position="stack") + ggtitle("Parcubacteria Abundances") + ylab ("Abundance (arbitraty units)")
+p = plot_bar(phyobj_parcu, "Order", fill="Order", facet_grid=~Bin) + geom_bar(aes(color=Order, fill=Order), stat="identity", position="stack") + ggtitle("Parcubacteria Abundances") + ylab ("Abundance (arbitraty units)")
+ggsave("parcubacteria_abundance_bin.png", plot = p, path= "./files/images/parcubacteria", height = 3.5, width = 6, units = "in")
 
-
-p = plot_bar(phyobj_parcu, "Order", fill="Order", facet_grid=~Media.Type.1)
-p + geom_bar(aes(color=Order, fill=Order), stat="identity", position="stack") + ggtitle("Parcubacteria Abundances") + ylab ("Abundance (arbitraty units)")
+p = plot_bar(phyobj_parcu, "Order", fill="Order", facet_grid=~Media.Type.1) + geom_bar(aes(color=Order, fill=Order), stat="identity", position="stack") + ggtitle("Parcubacteria Abundances") + ylab ("Abundance (arbitraty units)")
+ggsave("parcubacteria_abundance_mediatype.png", plot = p, path= "./files/images/parcubacteria", height = 3.5, width = 6, units = "in")
 
 ```
 
