@@ -494,7 +494,7 @@ export_tax_table = dplyr::left_join(x = as.data.frame(tax_table),
                              y = as.data.frame(fasv),
                              by = "otu") %>% dplyr::select(-otu)
  
-write_tsv(export_tax_table, "silva_allgroups_taxtable_1-27-24-filt-norm.tsv")
+write_tsv(export_tax_table, "./files/silva_allgroups_taxtable_1-27-24-filt-norm.tsv")
 
 #Run Faprotax on the command line. You will need numpy installed. 
 # ./collapse_table.py -i silva_allgroups_taxtable_1-27-24-filt-norm.tsv -g FAPROTAX.txt -o silva_allgroups_taxtable_1-27-24-filt-norm_out.tsv -r silva_allgroups_taxtable_1-27-24-filt-norm_report.txt -d "Taxonomy" -v
@@ -502,7 +502,7 @@ write_tsv(export_tax_table, "silva_allgroups_taxtable_1-27-24-filt-norm.tsv")
 fapro_raw = read_tsv("./files/silva_allgroups_taxtable_1-27-24-filt-norm_out.tsv", show_col_types = FALSE) %>% column_to_rownames(var = "group") %>% as.matrix()
 ```
 
-## Relative Abundance
+## Relative Abundance at the Class level
 
 We can visualize the diversity of each individual sample, each system, and each operation type at the class level. 
 
@@ -517,22 +517,22 @@ normalized_ps = phyobj_all
 #select your variable of interest here 
 merged_ps_phylum_SysName = merge_samples(normalized_ps, "System_Name") 
 merged_ps_phylum_Bin = merge_samples(normalized_ps, "Bin")
-# merged_ps_phylum_Media = merge_samples(normalized_ps, "Media.Type.1") 
-# merged_ps_phylum_SysType = merge_samples(normalized_ps, "System.Type") 
+merged_ps_phylum_Media = merge_samples(normalized_ps, "Media_Type_1")
+merged_ps_phylum_SysType = merge_samples(normalized_ps, "System_Type")
 
 #Merge at your taxonomic rank of interest, I chose Class here.
 normalized_ps_phylum1 = tax_glom(normalized_ps, "Class", NArm = TRUE)
 normalized_ps_phylum2 = tax_glom(merged_ps_phylum_SysName, "Class", NArm = TRUE)
 normalized_ps_phylum3 = tax_glom(merged_ps_phylum_Bin, "Class", NArm = TRUE)
-# normalized_ps_phylum4 = tax_glom(merged_ps_phylum_Media, "Class", NArm = TRUE)
-# normalized_ps_phylum5 = tax_glom(merged_ps_phylum_SysType, "Class", NArm = TRUE)
+normalized_ps_phylum4 = tax_glom(merged_ps_phylum_Media, "Class", NArm = TRUE)
+normalized_ps_phylum5 = tax_glom(merged_ps_phylum_SysType, "Class", NArm = TRUE)
 
 # Transform counts to relative abundances
 normalized_ps_phylum1_relabun = transform_sample_counts(normalized_ps_phylum1, function(OTU) OTU/sum(OTU) * 100)
 normalized_ps_phylum2_relabun = transform_sample_counts(normalized_ps_phylum2, function(OTU) OTU/sum(OTU) * 100)
 normalized_ps_phylum3_relabun = transform_sample_counts(normalized_ps_phylum3, function(OTU) OTU/sum(OTU) * 100)
-# normalized_ps_phylum4_relabun = transform_sample_counts(normalized_ps_phylum4, function(OTU) OTU/sum(OTU) * 100)
-# normalized_ps_phylum5_relabun = transform_sample_counts(normalized_ps_phylum5, function(OTU) OTU/sum(OTU) * 100)
+normalized_ps_phylum4_relabun = transform_sample_counts(normalized_ps_phylum4, function(OTU) OTU/sum(OTU) * 100)
+normalized_ps_phylum5_relabun = transform_sample_counts(normalized_ps_phylum5, function(OTU) OTU/sum(OTU) * 100)
 
 #Get the number of unique colors and select that many from iWantHue https://medialab.github.io/iwanthue/ 
 tax = taxa %>% as.data.frame()
@@ -542,7 +542,6 @@ myColors <- c("#645fe8", "#6ebf25", "#872bb2", "#38d65f", "#a725ae", "#51c33b", 
 
 # assign specific colors to variables
 # https://stackoverflow.com/questions/6919025/how-to-assign-colors-to-categorical-variables-in-ggplot2-that-have-stable-mappin
-
 
 ps@tax_table
 tax_df = tax %>% as.data.frame()
@@ -563,7 +562,7 @@ p2 = p2 %>%
         ggplot(aes(x = Sample, y = Abundance, fill = Class)) +
         geom_bar(stat = "identity") +
         theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
-        labs(y = "Relative Abundance", title = "Class Relative Abundance by System", x = "") +
+        labs(y = "Relative Abundance", title = "Class Relative Abundance by System Name", x = "") +
         guides(fill="none") + scale_fill_manual(name = "Class", values=myColors)
 
 p3 = psmelt(normalized_ps_phylum3_relabun) %>%
@@ -573,14 +572,32 @@ p3 = psmelt(normalized_ps_phylum3_relabun) %>%
         labs(y = "Relative Abundance", title = "Class Relative Abundance by Bin", x = "") +
         guides(fill="none") + scale_fill_manual(name = "Class", values=myColors) 
 
+p4 = psmelt(normalized_ps_phylum4_relabun) %>%
+        ggplot(aes(x = Sample, y = Abundance, fill = Class)) +
+        geom_bar(stat = "identity") +
+        theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+        labs(y = "Relative Abundance", title = "Class Relative Abundance by Media Type", x = "") +
+        guides(fill="none") + scale_fill_manual(name = "Class", values=myColors) 
 
-p1 
+p5 = psmelt(normalized_ps_phylum5_relabun) %>%
+        ggplot(aes(x = Sample, y = Abundance, fill = Class)) +
+        geom_bar(stat = "identity") +
+        theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+        labs(y = "Relative Abundance", title = "Class Relative Abundance by System Type", x = "") +
+        guides(fill="none") + scale_fill_manual(name = "Class", values=myColors)
+
+p1
 p2 
 p3 + theme_bw()
+p4 + theme_bw()
+p5 + theme_bw()
 
 #Save plots
-ggsave(filename = "relabund_class_sampleid.png", plot = p1, path = working_directory)
-ggsave(filename = "relabund_class_samplename.png", plot = p2, path = working_directory)
+ggsave(filename = "relabund_class_sampleid.png", plot = p1, path = "./files/images/relative_abundance", width = 7, height = 7, units = "in")
+ggsave(filename = "relabund_class_samplename.png", plot = p2, path = "./files/images/relative_abundance", width = 7, height = 7, units = "in")
+ggsave(filename = "relabund_class_bin.png", plot = p3, path = "./files/images/relative_abundance", width = 7, height = 7, units = "in")
+ggsave(filename = "relabund_class_mediatype.png", plot = p4, path = "./files/images/relative_abundance", width = 7, height = 7, units = "in")
+ggsave(filename = "relabund_class_systemtype.png", plot = p5, path = "./files/images/relative_abundance", width = 7, height = 7, units = "in")
 ```
 
 We can also visualize the diversity of functions present in each system. 
