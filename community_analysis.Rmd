@@ -58,6 +58,7 @@ The data span a range of years, and samples were collected from this variety of 
 | System type | Scale and setup of system. Sequencing batch reactor, scale model WRRF, full scale WRRF. |
 | Media type | Inflow media. Fermented dairy manure, synethetic wastewater, real wastewater. |
 | Bin | Function of the system. Primarily phosphorus removal (P), primarily phosphorus + nitrogen removal (PN), primarily PHA production (PHA). |
+| Collection date | Date of collection |
 
 88 individual samples of 16S rRNA gene were sequenced on an individual Illumina run using multiplexing. Raw reads were demultiplexed by the UI Core and this workflow begins with demultiplexed FASTQ files (read 1: R1 and read 2: R2). 
 
@@ -105,6 +106,9 @@ select = dplyr::select
 ```
 
 ```{r Set up directory}
+
+# Note: Fastq files are too large to host on github. #
+
 path_R1 <- "/Users/leycufur/bioinfo/Bi624/Sludge/DADA2/R1_raw_reads" # CHANGE ME to the directory containing the fastq files after unzipping.
 path_R2 <- "/Users/leycufur/bioinfo/Bi624/Sludge/DADA2/R2_raw_reads" # CHANGE ME to the directory containing the fastq files after unzipping.
 
@@ -207,7 +211,7 @@ asv <- t(seqtab.nochim)
 
 ```{r export asv and taxa}
 write_tsv(asv_names, "./files/asv_counts.tsv")
-write_tsv(as.data.frame(taxa), "./files/taxa_silva_dada2.tsv"
+write_tsv(as.data.frame(taxa), "./files/taxa_silva_dada2.tsv")
 ```
 
 ## Phyloseq
@@ -249,7 +253,7 @@ taxa_names(ps) <- paste0("ASV", seq(ntaxa(ps)))
 
 ```
 
-## Data preprocessing
+## Initial data exploration
 
 We can evaluate the overall alpha diversity of all the samples to get a general understanding of the spread of alpha diversity. Here are diversity values using richness, Shannon's, and Simpson's index calculations from the vegan package. 
 
@@ -322,17 +326,17 @@ ggsave("summary_rarified_diversity.png", plot=p1, path = "./files/images", width
 phyobj_all = ps
 phyobj_all
 
-#Subset out other Kingdoms (one Eukaryote), mitochondria, and chloroplasts which are picked up by the Eubacteria primer
 
-#prune to 10,000. See alpha diversity section.
+#prune to 10,000. See data exploration section. #
 samples = sample_sums(phyobj_all) > 10000
 phyobj_all = prune_samples(samples, phyobj_all) 
 
+#Subset out other Kingdoms (one Eukaryote), mitochondria, and chloroplasts which are picked up by the Eubacteria primer #
 phyobj_all = subset_taxa(phyobj_all, Kingdom == "Bacteria")
 phyobj_all = subset_taxa(phyobj_all, Family != "Mitochondria")
 phyobj_all = subset_taxa(phyobj_all, Order != "Chloroplast")
 
-# List the samples that have been removed in preprocessing
+# List the samples that have been removed in preprocessing #
 new_table = otu_table(phyobj_all) %>% as.data.frame()
 new_samples = colnames(new_table)
 old_samples = rownames(meta)
@@ -1045,30 +1049,6 @@ p1 = plot_ordination(
 p1
 ggsave("nmds_Mediatype.png", plot = p1, path= "./files/images/beta_diversity", width = 8, height = 5, units = "in")
 
-# PERMANOVA + PERMDISP #
-
-#filter out ASVs that have only 0 values
-ot_df = otu_table(phyobj_all) %>% as.data.frame()
-ot_df = ot_df %>% mutate(sum = rowSums(.)) %>% dplyr::select(sum, everything()) %>% filter(sum != 0) %>% dplyr::select(-sum) %>% t()
-samples = rownames(ot_df)
-# get bray-curtis distances # 
-adonis_dist = vegdist(ot_df, method = "bray") 
-
-# edit metadata to reflect filtered samples #
-submeta = meta %>% t() %>% as.data.frame %>% dplyr::select(any_of(samples)) %>% t() %>% as.data.frame()
-
-# 1. PERMANOVA #
-bintype = adonis2(adonis_dist ~ Bin, data = submeta, permutations = 1e4)
-bintype$`Pr(>F)`[1] # extract p-value 
-
-# Testing: are centroids of clusters are significantly different?
-
-# 2. PERMDISP #
-bd = betadisper(adonis_dist, submeta$Bin)
-anova(bd)
-
-# Testing: are the spread of clusters significantly different? 
-
 ```
 
 ```{r variance stabilized NMDS: by system scale}
@@ -1108,30 +1088,6 @@ p1 = plot_ordination(
 p1
 ggsave("nmds_Systemtype.png", plot = p1, path= "./files/images/beta_diversity", width = 8, height = 5, units = "in")
 
-# PERMANOVA + PERMDISP #
-
-#filter out ASVs that have only 0 values
-ot_df = otu_table(phyobj_all) %>% as.data.frame()
-ot_df = ot_df %>% mutate(sum = rowSums(.)) %>% dplyr::select(sum, everything()) %>% filter(sum != 0) %>% dplyr::select(-sum) %>% t()
-samples = rownames(ot_df)
-# get bray-curtis distances # 
-adonis_dist = vegdist(ot_df, method = "bray") 
-
-# edit metadata to reflect filtered samples #
-submeta = meta %>% t() %>% as.data.frame %>% dplyr::select(any_of(samples)) %>% t() %>% as.data.frame()
-
-# 1. PERMANOVA #
-bintype = adonis2(adonis_dist ~ Bin, data = submeta, permutations = 1e4)
-bintype$`Pr(>F)`[1] # extract p-value 
-
-# Testing: are centroids of clusters are significantly different?
-
-# 2. PERMDISP #
-bd = betadisper(adonis_dist, submeta$Bin)
-anova(bd)
-
-# Testing: are the spread of clusters significantly different? 
-
 ```
 
 ```{r variance stabilized NMDS: by year}
@@ -1165,31 +1121,6 @@ p1 = plot_ordination(
 
 p1
 ggsave("nmds_collectiondate.png", plot = p1, path= "./files/images/beta_diversity", width = 8, height = 5, units = "in")
-
-# PERMANOVA + PERMDISP #
-
-#filter out ASVs that have only 0 values
-ot_df = otu_table(phyobj_all) %>% as.data.frame()
-ot_df = ot_df %>% mutate(sum = rowSums(.)) %>% dplyr::select(sum, everything()) %>% filter(sum != 0) %>% dplyr::select(-sum) %>% t()
-samples = rownames(ot_df)
-# get bray-curtis distances # 
-adonis_dist = vegdist(ot_df, method = "bray") 
-
-# edit metadata to reflect filtered samples #
-submeta = meta %>% t() %>% as.data.frame %>% dplyr::select(any_of(samples)) %>% t() %>% as.data.frame()
-
-# 1. PERMANOVA #
-bintype = adonis2(adonis_dist ~ Bin, data = submeta, permutations = 1e4)
-bintype$`Pr(>F)`[1] # extract p-value 
-
-# Testing: are centroids of clusters are significantly different?
-
-# 2. PERMDISP #
-bd = betadisper(adonis_dist, submeta$Bin)
-anova(bd)
-
-# Testing: are the spread of clusters significantly different? 
-
 ```
 
 
