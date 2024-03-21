@@ -626,7 +626,7 @@ p = plot_nested_bar(ps_obj = top_asv$ps_obj,
   xlab("") +
   ggtitle("Top 10 Orders across all samples")
 p
-ggsave(filename = "topfunction_order_all.png", plot = p, path = working_directory)
+ggsave(filename = "topfunction_order_all.png", plot = p, path = "./files/images/relative_abundance", width = 7, height = 7, units = "in")
 
 # Now, top 10 by separated by Bin
 phyobj_all = backup_var_phyobj_all
