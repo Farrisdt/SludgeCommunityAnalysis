@@ -499,7 +499,7 @@ write_tsv(export_tax_table, "silva_allgroups_taxtable_1-27-24-filt-norm.tsv")
 #Run Faprotax on the command line. You will need numpy installed. 
 # ./collapse_table.py -i silva_allgroups_taxtable_1-27-24-filt-norm.tsv -g FAPROTAX.txt -o silva_allgroups_taxtable_1-27-24-filt-norm_out.tsv -r silva_allgroups_taxtable_1-27-24-filt-norm_report.txt -d "Taxonomy" -v
 
-fapro_raw = read_tsv("\\\\wsl.localhost/Ubuntu/home/ruben/bioinfo/sludge/silva_allgroups_taxtable_1-27-24-filt-norm_out.tsv", show_col_types = FALSE) %>% column_to_rownames(var = "group") %>% as.matrix()
+fapro_raw = read_tsv("./files/silva_allgroups_taxtable_1-27-24-filt-norm_out.tsv", show_col_types = FALSE) %>% column_to_rownames(var = "group") %>% as.matrix()
 ```
 
 ## Relative Abundance
