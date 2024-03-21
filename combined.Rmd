@@ -62,6 +62,13 @@ The data span a range of years, and samples were collected from this variety of 
 
 ## Setup 
 
+To run without having to re-compute objects, run the following: 
+
+```{r}
+load("sludge_workspace.RData")
+```
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 
@@ -433,28 +440,6 @@ p1
 ggsave(filename = "shannons_bin_anova.png", plot = p1, path = "./files/images/alpha_diversity", width = 7, height = 7, units = "in")
 ```
 
-## Community structure with Euler diagrams 
-
-```{r MicEco Euler diagrams, Full Sample}
-library(MicEco)
-library(gridExtra)
-
-set.seed(130) #it looks really wonky otherwise.
-euler1 = ps_euler(phyobj_all, "Media_Type_1", quantities = list(type=c("percent")), fraction = 0, shape = "ellipse", weight = TRUE, relative = TRUE, fill = c("#F2D000", "#F58609", "#A01892"))
-p1 = grid.arrange(grobs = list(euler1), top = "Media Type, Full Sample")
-
-set.seed(100)
-euler2 = ps_euler(phyobj_all, "System_Type", quantities = list(type=c("percent")), fraction = 0, shape = "ellipse", weight = TRUE, relative = TRUE, fill = c("#347F92", "#A6CEE3","#94DE11" ))
-p2 = grid.arrange(grobs = list(euler2), top = "System Type, Full Sample")
-
-set.seed(125)
-euler3 = ps_euler(phyobj_all, "Bin", quantities = list(type=c("percent")), fraction = 0, shape = "ellipse", weight = TRUE, relative = TRUE, fill = c("#347F92", "#A6CEE3","#94DE11" ))
-p3 = grid.arrange(grobs = list(euler3), top = "Bin, Full Sample")
-
-ggsave(filename = "euler_media.png", plot = p1, path = "./files/images/beta_diversity", width = 7, height = 4, units = "in")
-ggsave(filename = "euler_system.png", plot = p2, path = "./files/images/beta_diversity", width = 7, height = 4, units = "in")
-ggsave(filename = "euler_bin.png", plot = p3, path = "./files/images/beta_diversity", width = 7, height = 4, units = "in")
-```
 
 ## Beta Diversity analysis
   
@@ -487,6 +472,29 @@ sample_names(ot) <- sample_names(phyobj_all@otu_table)
 otu_table(phyobj_all) <- otu_table(ot, taxa_are_rows = TRUE)
 
 backup_var_phyobj_all = phyobj_all
+```
+
+## Community structure with Euler diagrams 
+
+```{r MicEco Euler diagrams, Full Sample}
+library(MicEco)
+library(gridExtra)
+
+set.seed(130) #it looks really wonky otherwise.
+euler1 = ps_euler(phyobj_all, "Media_Type_1", quantities = list(type=c("percent")), fraction = 0, shape = "ellipse", weight = TRUE, relative = TRUE, fill = c("#F2D000", "#F58609", "#A01892"))
+p1 = grid.arrange(grobs = list(euler1), top = "Media Type, Full Sample")
+
+set.seed(100)
+euler2 = ps_euler(phyobj_all, "System_Type", quantities = list(type=c("percent")), fraction = 0, shape = "ellipse", weight = TRUE, relative = TRUE, fill = c("#347F92", "#A6CEE3","#94DE11" ))
+p2 = grid.arrange(grobs = list(euler2), top = "System Type, Full Sample")
+
+set.seed(125)
+euler3 = ps_euler(phyobj_all, "Bin", quantities = list(type=c("percent")), fraction = 0, shape = "ellipse", weight = TRUE, relative = TRUE, fill = c("#347F92", "#A6CEE3","#94DE11" ))
+p3 = grid.arrange(grobs = list(euler3), top = "Bin, Full Sample")
+
+ggsave(filename = "euler_media.png", plot = p1, path = "./files/images/beta_diversity", width = 7, height = 4, units = "in")
+ggsave(filename = "euler_system.png", plot = p2, path = "./files/images/beta_diversity", width = 7, height = 4, units = "in")
+ggsave(filename = "euler_bin.png", plot = p3, path = "./files/images/beta_diversity", width = 7, height = 4, units = "in")
 ```
 
 ```{r Functionality: Faprotax}
@@ -522,7 +530,7 @@ fapro_raw = read_tsv("./files/silva_allgroups_taxtable_1-27-24-filt-norm_out.tsv
 
 ## Relative Abundance at the Class level
 
-We can visualize the diversity of each individual sample, each system, and each operation type at the class level. 
+We can visualize the diversity of each individual sample, each system, and each operation type at the class level. Legends are ommitted here due to the number of taxonomic ranks; the next section will reduce the number of taxa graphed and allows legends.
 
 ```{r Relative Abundance: by Class}
 
@@ -829,9 +837,19 @@ physeq_ord <- ordinate(
  formula = ~Bin,
  distance = "bray"
 )
-stress = as.character(round(physeq_ord$stress, digits = 3))
-stresslab = paste("Stress =", stress)
 
+# Get stress measurements. # 
+
+stress = as.character(round(physeq_ord$stress, digits = 3)) # extract stress measurement from ordination object #
+stresslab = paste("Stress =", stress) # make label string #
+
+p = stressplot(physeq_ord) # plot shepard diagram to visualize goodness of fit# 
+ggsave("nmds_shepard_stress_diagram.png", plot = p, path= "./files/images/beta_diversity")
+
+# The closer the stress is to 0, the better the fit, with 0 being a perfect representation of higher-dimensional data in lower-dimensional space. Generally, measures below 0.1 are ideal, and measures between 0.2-0.3 are acceptable. Measures higher than 0.3 are considered worse. #
+
+
+# plot NMDS # 
 p1 = plot_ordination(
  physeq = phyobj_all,
  ordination = physeq_ord,
@@ -848,50 +866,31 @@ p1 = plot_ordination(
   annotate("text", x = 2, y = -2.5, label = "Non-metric fit, R² = 0.985")
 
 p1
-ggsave("nmds_Bin.png", plot = p1, path=working_directory)
+ggsave("nmds_Bin.png", plot = p1, path= "./files/images/beta_diversity")
+
+# PERMANOVA + PERMDISP #
 
 #filter out ASVs that have only 0 values
 ot_df = otu_table(phyobj_all) %>% as.data.frame()
-
-#247 -> 239
 ot_df = ot_df %>% mutate(sum = rowSums(.)) %>% dplyr::select(sum, everything()) %>% filter(sum != 0) %>% dplyr::select(-sum) %>% t()
 samples = rownames(ot_df)
+# get bray-curtis distances # 
 adonis_dist = vegdist(ot_df, method = "bray") 
 
-# adonis_mds = metaMDS(adonis_dist) %>% scores() %>% 
-#   as_tibble(rownames="Group")
-
-#subset samples needed from meta
-# needed_samples = rownames(ot_df)
-# parcu_adonis_meta = meta %>% rownames_to_column(var="Group") %>% filter(Group %in% needed_samples)
-# 
-# meta_nmds = inner_join(adonis_mds, parcu_adonis_meta, by = "Group")
-
-# centroid_systemtype = meta_nmds %>% 
-#   group_by(Bin) %>% 
-#   summarize(NMDS1 = mean(NMDS1), NMDS2 = mean(NMDS2))
-# 
-# meta_nmds %>% 
-#   ggplot(aes(x=NMDS1, y = NMDS2, color = Bin))+
-#   geom_point() +
-#   stat_ellipse(show.legend = FALSE) +
-#   geom_point(data = centroid_systemtype, size = 2, shape = 21, color = "black", aes(fill=Bin), show.legend = FALSE)+
-#  # ggtitle("Media Type, bray-curtis")+
-#   scale_colour_discrete(name="Bin") +
-#   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-#     panel.background = element_blank(), axis.line = element_line(colour = "black"))
-
-stressplot(physeq_ord)
-
+# edit metadata to reflect filtered samples #
 submeta = meta %>% t() %>% as.data.frame %>% dplyr::select(any_of(samples)) %>% t() %>% as.data.frame()
 
-# PERMANOVA # 
+# 1. PERMANOVA #
 bintype = adonis2(adonis_dist ~ Bin, data = submeta, permutations = 1e4)
-bintype$`Pr(>F)`[1] #p-value 
+bintype$`Pr(>F)`[1] # extract p-value 
 
+# Testing: are centroids of clusters are significantly different?
+
+# 2. PERMDISP #
 bd = betadisper(adonis_dist, submeta$Bin)
 anova(bd)
 
+# Testing: are the spread of clusters significantly different? 
 
 ```
 
@@ -920,16 +919,34 @@ p1 = plot_ordination(
   stat_ellipse(type = "t", geom = "polygon", position = "identity", alpha = .05, aes(fill = Bin)) + 
   theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
     panel.background = element_blank(), axis.line = element_line(colour = "black"),strip.text = element_text(colour = 'white'),text = element_text(size=60, family = "skeena"),legend.text=element_text(size=60),legend.title = element_blank())+
-  annotate("text", x = 4.2, y = -2, label = stresslab, size = 12, family = "skeena")+
-  annotate("text", x = 3.6, y = -2.5, label = "Non-metric fit, R² = 0.985", size = 12, family = "skeena")+
+  annotate("text", x = 1.28, y = -2, label = stresslab, size = 12, family = "skeena")+
+  annotate("text", x = 1.8, y = -2.5, label = "Non-metric fit, R² = 0.985", size = 12, family = "skeena")+
   theme(plot.background = element_rect(fill = "#F0EEE4"), legend.background = element_rect(fill = "#F0EEE4"))
   
 
 p1
-ggsave("nmds_Bin.png", plot = p1, path=working_directory, height = 5, width = 7, dpi = 300)
+ggsave("nmds_Bin_poster.png", plot = p1, path= "./files/images/poster_figures", height = 5, width = 8, units = "in", dpi = 300)
 ```
 
 Efforts were made at the beginning of the project to investigate Parcubacteria specifically. Beta diversity analysis using NMDS proved difficult due to the sparsity of Parcubacteria differences between samples. Presence-absence and abundance testing was possible, however, and revealed that PN systems and systems with real wastewater had a greater amount and variety of Parcubacteria.
+
+```{r Parcubacteria abundance}
+# https://joey711.github.io/phyloseq/plot_bar-examples.html #
+
+# reset phyloseq object # 
+phyobj_all = backup_var_phyobj_all
+
+# normalize using DESeq2 first # 
+phyobj_parcu = subset_taxa(phyobj_all, Class == "Parcubacteria")
+
+p = plot_bar(phyobj_parcu, "Order", fill="Order", facet_grid=~Bin)
+p + geom_bar(aes(color=Order, fill=Order), stat="identity", position="stack") + ggtitle("Parcubacteria Abundances") + ylab ("Abundance (arbitraty units)")
+
+
+p = plot_bar(phyobj_parcu, "Order", fill="Order", facet_grid=~Media.Type.1)
+p + geom_bar(aes(color=Order, fill=Order), stat="identity", position="stack") + ggtitle("Parcubacteria Abundances") + ylab ("Abundance (arbitraty units)")
+
+```
 
 
 =======
